@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"> </noscript>
+<link rel="stylesheet" type="text/css" href="css/inmobiliaria.css">
+<link rel="stylesheet" type="text/css" href="css/icons.css">
+<script src="script.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<header class="header">
+    <div class="contenedor-header">
+        <h1 class="logo"><a href="index.html"><img src="imagenes/logo-real-state-fx-2.png">InmoReal</a></h1>
+        
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu">
+            <button class="menu-close">&times;</button>
+            <ul>
+                <li><a href="index.html" class="item-activo">Inicio</a></li>
+                <li><a href="propiedades.html">Propiedades</a></li>
+
+                <li class="has-submenu">
+                    <a href="#" class="submenu-trigger">
+                        Cetegorías
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="icon-arrow">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="index.html">Casas</a></li>
+                        <li><a href="index.html">Apartamentos</a></li>
+                        <li><a href="index.html">Oficinas</a></li>
+                        <li><a href="index.html">Bodegas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>     
+</header>
+
+	<main>
+    	<section class="banner-inicio ">
+      		<div class="contenedor">
+        		<h1>Encuentra <br>tu próximo hogar aquí</h1>
+        		<p>Casas y apartamentos en las mejores zonas</p>
+        		<!--<a href="propiedades" class="boton">Ver propiedades</a>-->
+      		</div>
+    	</section>
+		
+		<section class="propiedades relleno-1">
+      		<div class="contenedor">
+        		<h2>Propiedades destacadas</h2>
+        		<div class="contenedor-filtros">
+    				<button class="filtro-btn activo">Todas</button>
+    				<button class="filtro-btn">Casas</button>
+    				<button class="filtro-btn">Apartamentos</button>
+    			
+				</div>
+
+				<div class="grid-propiedades" id="listado-propiedades">
+					<article>
+						<img src="imagenes/foto-1.jpg">
+						<h2>Venta de apartamento en barrio popular modelo</h2>
+						<span class="direccion"><i class="houzez-icon icon-pin me-2"></i> Calle 80 B # 85 -15 - Bogotá</span>
+						<span class="detalle">
+							<span class="doemitorios"><i class="houzez-icon icon-hotel-double-bed-1"></i> 4</span>
+							<span class="banos"><i class="houzez-icon icon-bathroom-shower-1"></i> 4</span>
+							<span class="area"><i class="houzez-icon icon-ruler-triangle "></i> 300 m²</span>
+							<span class="garaje"><i class="houzez-icon icon-car-1 me-2"></i> 4</span>
+						</span>
+						<span class="precio">S800.000.000 <span class="detalle-link"><a href="detalle-propiedad.html">Ver detalle</a></span></span>
+					</article>
+
+					<article>
+						<img src="imagenes/foto-2.jpg">
+						<h2>Venta de apartamento en barrio popular modelo</h2>
+						<span class="direccion"><i class="houzez-icon icon-pin me-2"></i> Calle 80 B # 85 -15 - Bogotá</span>
+						<span class="detalle">
+							<span class="doemitorios"><i class="houzez-icon icon-hotel-double-bed-1 me-2"></i> 4</span>
+							<span class="banos"><i class="houzez-icon icon-bathroom-shower-1 me-2"></i> 4</span>
+							<span class="area"><i class="houzez-icon icon-ruler-triangle me-2"></i> 300 m²</span>
+							<span class="garaje"><i class="houzez-icon icon-car-1 me-2"></i> 4</span>
+						</span>
+						<span class="precio">S800.000.000 <span class="detalle-link"><a href="detalle-propiedad.html">Ver detalle</a></span></span>
+					</article>
+
+					<article>
+						<img src="imagenes/foto-1.jpg">
+						<h2>Venta de apartamento en barrio popular modelo</h2>
+						<span class="direccion"><i class="houzez-icon icon-pin me-2"></i> Calle 80 B # 85 -15 - Bogotá</span>
+						<span class="detalle">
+							<span class="doemitorios"><i class="houzez-icon icon-hotel-double-bed-1 me-2"></i> 4</span>
+							<span class="banos"><i class="houzez-icon icon-bathroom-shower-1 me-2"></i> 4</span>
+							<span class="area"><i class="houzez-icon icon-ruler-triangle me-2"></i> 300 m²</span>
+							<span class="garaje"><i class="houzez-icon icon-car-1 me-2"></i> 4</span>
+						</span>
+						<span class="precio">S800.000.000 <span class="detalle-link"><a href="detalle-propiedad.html">Ver detalle</a></span></span>
+					</article>					
+					
+				</div>
+
+      		</div>
+    	</section>
+
+    	<section class="loop-categorias">
+    		<h2>Categorías</h2>
+    		<p class="subtitulo-ban">Explora nuestras categorías cuidadosamente seleccionadas para encontrar exactamente lo que estás buscando.</p>
+			<div class="cuadricula-categorias contenedor">
+    			<div class="tarjeta-categoria ">
+       		 		<div class="contenedor-icono">
+            			<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="icono-svg">
+               				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            			</svg>
+        			</div>
+        			<h3 class="titulo-categoria">Casas</h3>
+        			<p class="descripcion-categoria">Conoce nuestra colección de casas</p>
+        			<div class="enlace-explorar">Explorar →</div>
+    			</div>
+
+   				<div class="tarjeta-categoria">
+        			<div class="contenedor-icono">
+            			<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="icono-svg">
+               				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            			</svg>
+        			</div>
+       				<h3 class="titulo-categoria">Apartamentos</h3>
+        			<p class="descripcion-categoria">Conoce nuestra colección de apartamentos</p>
+        			<div class="enlace-explorar">Explorar →</div>
+    			</div>
+			</div>
+    	</section>
+
+    	<section class="servicios relleno-1">
+    		<div class="contenedor">
+    			<h2>Servicios profesionales</h2>
+    			<p>Soluciones inmobiliarias integrales para cada etapa de tu propiedad.</p>
+				<div class="grid-servicios" id="grid-servicios">
+
+					<article >
+
+						<i class="houzez-icon icon-check-circle-1"></i>	
+                         <h3>Arrendamientos</h3>
+                         <div class="scroll-fx scroll-delgado">
+                        	<p> Gestión eficiente y segura para tus procesos de arrendamiento, cuidando cada detalle para garantizar tranquilidad,  y resultados.</p>
+                    	</div>
+                    </article>
+					<article>
+						<i class="houzez-icon icon-check-circle-1"></i>						                 
+                         <h3>Ventas</h3>
+                        <p>Vendemos tu propiedad al mejor precio, mediante un proceso seguro, cuidando cada etapa de la negociación.</p>
+					</article>
+					<article>
+					<i class="houzez-icon icon-check-circle-1"></i>						                 
+                         <h3>Administración</h3>
+                        <p>Nos encargamos de la gestión de tu propiedad con profesionalismo y total confianza, para que tengas tranquilidad y control en todo momento.</p>
+					</article>
+				</div>
+    			
+    		</div>
+    		
+    	</section>
+
+		
+
+
+
+  	</main>
+
+	<footer class="footer relleno-1">
+    	<div class="contenedor">
+    		<article class="info">
+    			<img class="logo-footer" src="imagenes/logo-real-state-fx-2.png">
+    			<h4>RealSate</h4>
+    			 
+      			
+      			<ul class="redes">
+					<li>
+						<a class="btn-facebook" target="_blank" href="https://facebook.com/Favethemes" aria-label="Facebook">
+							<i class="houzez-icon icon-social-media-facebook me-2" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a class="btn-instagram" target="_blank" href="http://instagram.com" aria-label="Twitter">
+							<i class="houzez-icon icon-social-instagram me-2" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a class="btn-x" target="_blank" href="http://x.com" aria-label="X">
+							<i class="houzez-icon icon-x-logo-twitter-logo-2" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a class="btn-linkedin" target="_blank" href="http://linkedin.com" aria-label="Linkedin">
+							<i class="houzez-icon icon-professional-network-linkedin" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a class="btn-pinterest" target="_blank" href="http://pinterest.com" aria-label="Pinterest">
+							<i class="houzez-icon icon-social-pinterest" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a class="btn-pinterest" target="_blank" href="http://tiktok.com" aria-label="TikTok">
+							<i class="houzez-icon icon-tiktok-1-logos-24" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a class="btn-google" target="_blank" href="http://google.com" aria-label="Google">
+							<i class="houzez-icon icon-social-media-google-plus-1" aria-hidden="true"></i>
+						</a>
+					</li>
+
+
+				</ul>
+				<p class="copy">&copy; 2026 Inmobiliaria RealState</p>
+			</article>
+			
+
+			<article>
+				<h3>Links rapidos</h3>
+				<ul>
+					<li><a href="#">Propiedades</a></li>
+					<li><a href="#">Términos y Condiciones</a></li>
+					<li><a href="#" >Política de Privacidad</a></li>
+					<li><a href="#" >Política de Cookies</a></li> 
+				</ul>
+			</article>
+
+			<article>
+				<h3>Categorías</h3>
+				<ul>
+					<li><a href="#">Casas</a></li>
+					<li><a href="#">Apartamentos</a></li>
+					<li><a href="#" >Oficinas</a></li>
+					<li><a href="#" >Apartaestudio</a></li> 
+	
+				</ul>
+			</article>
+
+
+			<article class="contacto">
+				<h3>Contácto</h3>
+				<ul> 
+					<li><i class="houzez-icon icon-mobile-phone"></i> <span><span>+ 57</span> 3232844851</span></li>
+					<li><i class="houzez-icon icon-phone"></i>  601 7783831</span></li> 
+					<li><i class="houzez-icon icon-pin me-2"></i> Calle 80 #65 15. Bogotá - Colombia</span></li> 
+				    <li><i class="houzez-icon icon-envelope"></i> <span>email@artefox.com</span></li> 
+				</ul>    
+
+			</article>
+
+    	</div>
+    </footer>
+
+</body>
+</html>
