@@ -461,6 +461,7 @@ export async function onRequest(context) {
                             <div class="item-detalle-fx"><span>Precio:</span> <span>$ ${getDato("PRECIO")}</span></div>
                             <div class="item-detalle-fx"><span>Habitaciones:</span> <span>${getDato("HABITACIONES")}</span></div>
                             <div class="item-detalle-fx"><span>Baños:</span> <span>${getDato("BAÑOS")}</span></div>
+							 <div class="item-detalle-fx"><span>Estacionamientos:</span> <span>${getDato("ESTACIONAMIENTO")}</span></div>
                             <div class="item-detalle-fx"><span>Área construida:</span> <span>${getDato("ÁREA CONSTRUIDA")}</span></div>
 							<div class="item-detalle-fx"><span>Área del lote:</span> <span>${getDato("ÁREA DEL LOTE")}</span></div>
                             <div class="item-detalle-fx"><span>País:</span> <span>${getDato("PÁIS")}</span></div>
