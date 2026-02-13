@@ -368,6 +368,7 @@ export async function onRequest(context) {
         align-items: center;
         justify-content: center;
         gap: 3px;
+		box-sizing: border-box;
     }
 
     .formulario-contacto input[type="submit"]:hover {
