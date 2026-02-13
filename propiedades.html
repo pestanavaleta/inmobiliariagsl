@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const cabecera = filas[0].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(h => h.replace(/^"|"$/g, '').trim().toUpperCase());
             const idx = {
-                id: cabecera.indexOf("ID"),
+                id: cabecera.indexOf("ID"), // Buscamos la columna ID
                 tipo: cabecera.indexOf("TIPO"),
                 operacion: cabecera.indexOf("OPERACIÓN"),
                 precio: cabecera.indexOf("PRECIO"),
@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const limpiar = (val) => val ? val.replace(/^"|"$/g, '').trim() : "";
 
                 const p = {
+                    id: limpiar(dato[idx.id]), // Extraemos el ID
                     tipo: limpiar(dato[idx.tipo]),
                     operacion: limpiar(dato[idx.operacion]),
                     precio: limpiar(dato[idx.precio]) || "0",
@@ -282,10 +283,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const article = document.createElement('article');
                 article.className = 'item-propiedad';
+                article.style.cursor = 'pointer'; // Indicamos que es clickeable
                 article.setAttribute('data-tipo', p.tipo);
                 article.setAttribute('data-operacion', p.operacion);
                 article.setAttribute('data-precio', p.precio);
                 article.setAttribute('data-ubicacion', `${p.dir} ${p.zona}`);
+
+                // --- EVENTO DE CLIC PARA EL DETALLE ---
+                article.addEventListener('click', () => {
+                    // Redirige a /propiedad?id=EL_ID_DE_LA_FILA
+                    window.location.href = `./propiedad?id=${p.id}`;
+                });
 
                 article.innerHTML = `
                     <div class="contenedor-img">
@@ -308,15 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filtrarPropiedades(); 
         });
 
-    // --- INTERRUPTOR MÓVIL ---
-    if (btnFiltros && barraForm) {
-        btnFiltros.addEventListener('click', () => {
-            barraForm.classList.toggle('abierta');
-            btnFiltros.innerHTML = barraForm.classList.contains('abierta') ? '<span>Ocultar Filtros</span>' : '<i class="houzez-icon icon-Filter-Faders"></i> Buscar y Filtrar';
-        });
-    }
-
-    // --- FUNCIÓN DE FILTRADO Y ETIQUETAS ---
+    // ... (El resto de tus funciones normalizar, filtrarPropiedades, etc., permanecen igual)
     function filtrarPropiedades() {
         const inputBusqueda = normalizar(formulario.querySelector('input[name="ubicacion"]').value);
         const operacion = formulario.querySelector('select[name="operacion"]').value;
@@ -345,7 +345,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return texto ? texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() : "";
     }
 
-    // --- GESTIÓN DE ETIQUETAS ---
     function actualizarEtiquetas(op, tipo) {
         if (!contenedorEtiquetas) return;
         contenedorEtiquetas.querySelectorAll('.etiqueta').forEach(e => e.remove());
@@ -367,14 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>`;
         
-        div.querySelector('.boton-quitar').onclick = () => {
+        div.querySelector('.boton-quitar').onclick = (e) => {
+            e.stopPropagation(); // Evitamos que el clic en la X abra la propiedad
             formulario.querySelector(`[name="${campo}"]`).value = "";
             filtrarPropiedades();
         };
         contenedorEtiquetas.insertBefore(div, btnLimpiarTodo);
     }
 
-    // --- ORDENAR POR PRECIO ---
     if (selectorOrden) {
         selectorOrden.addEventListener('change', () => {
             const orden = selectorOrden.value;
@@ -386,7 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- EVENTOS DE BOTONES ---
     formulario.addEventListener('input', filtrarPropiedades);
     if (btnLimpiarTodo) {
         btnLimpiarTodo.addEventListener('click', () => {
@@ -398,3 +396,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
