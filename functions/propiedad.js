@@ -502,13 +502,93 @@ export async function onRequest(context) {
             </article>
         </section>
     </main>
-
-    <footer class="footer relleno-1">
+	<footer class="footer relleno-1">
         <div class="contenedor">
             <article class="info">
-                <img class="logo-footer" src="/imagenes/logo-real-state-fx-2.png" alt="logo">
-                <p>&copy; 2026 Inmobiliaria RealState - Santo Grial por Artefox</p>
+                <img class="logo-footer" src="imagenes/logo-real-state-fx-2.png">
+                <h4>RealSate</h4>                 
+                
+                <ul class="redes">
+                    <li>
+                        <a class="btn-facebook" target="_blank" href="https://facebook.com/Favethemes" aria-label="Facebook">
+                            <i class="houzez-icon icon-social-media-facebook me-2" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="btn-instagram" target="_blank" href="http://instagram.com" aria-label="Twitter">
+                            <i class="houzez-icon icon-social-instagram me-2" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="btn-x" target="_blank" href="http://x.com" aria-label="X">
+                            <i class="houzez-icon icon-x-logo-twitter-logo-2" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="btn-linkedin" target="_blank" href="http://linkedin.com" aria-label="Linkedin">
+                            <i class="houzez-icon icon-professional-network-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="btn-pinterest" target="_blank" href="http://pinterest.com" aria-label="Pinterest">
+                            <i class="houzez-icon icon-social-pinterest" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="btn-pinterest" target="_blank" href="http://tiktok.com" aria-label="TikTok">
+                            <i class="houzez-icon icon-tiktok-1-logos-24" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="btn-google" target="_blank" href="http://google.com" aria-label="Google">
+                            <i class="houzez-icon icon-social-media-google-plus-1" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+
+                </ul>
+                <p class="copy">© 2026 Inmobiliaria RealState</p>
             </article>
+            
+
+            <article>
+                <h3>Links rapidos</h3>
+                <ul>
+                    <li><a href="#">Propiedades</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li> 
+                </ul>
+            </article>
+
+            <article>
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="#">Casas</a></li>
+                    <li><a href="#">Apartamentos</a></li>
+                    <li><a href="#">Oficinas</a></li>
+                    <li><a href="#">Apartaestudio</a></li> 
+    
+                </ul>
+            </article>
+
+
+            <article class="contacto">
+                <h3>Contácto</h3>
+                <ul> 
+                    <li><i class="houzez-icon icon-mobile-phone"></i> <span><span>+ 57</span> 3232844851</span></li>
+                    <li><i class="houzez-icon icon-phone"></i>  601 7783831</li> 
+                    <li><i class="houzez-icon icon-pin me-2"></i> Calle 80 #65 15. Bogotá - Colombia</li> 
+                    <li><i class="houzez-icon icon-envelope"></i> <span>email@artefox.com</span></li> 
+                </ul>
+            </article>
+
         </div>
     </footer>
 
