@@ -383,7 +383,7 @@ export async function onRequest(context) {
         }
     }
 /*====FORMULARIO DE CONTACTO====*/
-
+</style>
 </head>
 <body>
     <header class="header">
