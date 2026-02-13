@@ -60,25 +60,330 @@ export async function onRequest(context) {
     <script src="/script.js"></script>
 
     <style>
-        /* Aquí pegué todo tu CSS original */
-        body { background: var(--color-gris-1); font-family: 'Montserrat', sans-serif; }
-        .contenido-propiedad { display: grid; gap: 20px; }
-        @media (min-width: 768px) {
-            .contenido-propiedad { grid-template-columns: repeat(6, 1fr); }
-            .col-iz { grid-column: span 4; }
-            .col-de { grid-column: span 2; }
+         body{
+        background: var(--color-gris-1);
+    }
+
+    @media (min-width: 768px) {
+        .contenido-propiedad{
+        grid-template-columns: repeat(6, 1fr);
+        display: grid;
+        gap: 20px;
         }
-        .detalles-items-fx { padding: 25px; background: rgba(234,236,240,1); border: solid 2px #ccc; border-radius: 7px; }
-        @media (min-width: 768px) { .detalles-items-fx { grid-template-columns: 1fr 1fr; display: grid; gap: 0 30px; } }
-        .item-detalle-fx { display: flex; justify-content: space-between; border-bottom: 1px solid #dce0e0; padding: 8px 0px; }
-        .item-detalle-fx span:first-child { font-weight: 600; }
-        .grupo-bloque-fx { margin-bottom: 20px; background: #fff; padding: 18px; border-radius: 8px; }
-        .cabecera-fx .precio p { font-size: 23px; font-weight: 800; color: var(--color-negro-1); }
-        .contenodie .mySwiper2 { padding-top: 70% !important; position: relative; border-radius: 8px; overflow: hidden; }
-        .contenodie .swiper-slide a { display: block; width: 100%; height: 100%; background-size: cover; background-position: center; }
-        .miniaturas-fx-galeria .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
-        .btn-whatsapp { width: 100%; background: #25d366; color: #fff; border: none; padding: 12px; border-radius: 5px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
-    </style>
+    	.detalle-propiedad .bloques .col-iz{
+    	grid-column: span 4;
+    	}
+      .detalle-propiedad .bloques .col-de{
+    	grid-column: span 2;
+    	}
+    	.detalle-propiedad .bloques .col-iz .bloque:last-child{
+		margin-bottom: 0;
+		}
+	}
+
+    .detalle-propiedad .bloques .col-de .bloque:last-child{
+        margin-bottom: 0;
+    }
+
+    .detalles-items-fx{
+        padding: 25px;
+        background: rgba(234,236,240,1);
+        border: solid 2px #ccc;
+        border-radius: 7px;
+        
+    }
+    @media (max-width: 768px){
+
+        .detalles-items-fx{
+        padding: 18px;
+        }
+    }
+    @media (min-width: 768px){
+        .detalles-items-fx{
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+            gap:0 30px;
+        }
+
+    }
+
+    .detalles-items-fx .item-detalle-fx{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #dce0e0;
+        padding: 8px 0px;
+        gap:5px;
+    }
+
+    .detalles-items-fx .item-detalle-fx  span:first-child{
+        font-weight: 600;
+        color: var(--color-negro-1);
+    }
+
+    .detalles-items-fx .item-detalle-fx  span:last-child{
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+ /*====BLOQUE DETALLE ICONOS PROPIEDAD UNICA====*/
+   .grupo-detalle {
+        margin-top: 20px;   
+    }
+
+    .detalle-fx{ 
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-negro-1);
+    }
+
+
+	.detalle-propiedad .bloques  .grupo-bloque-fx{
+		margin-bottom: 20px;
+		background: #fff;
+		padding: 18px;
+		border-radius: 8px;      
+	}
+
+    @media (max-width: 768px) {
+        .detalle-fx .bloque-texto-fx{
+        display: none;
+        }
+    }
+/*====FIN BLOQUE DETALLE ICONOS PROPIEDAD UNICA====*/      
+
+/*====CABECERA TITULO PRECIO====*/
+    @media (min-width: 768px) {
+        .cabecera-fx {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        }
+        .cabecera-fx .precio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;                     
+        }
+    }
+    
+    .cabecera-fx span.titulo{
+       grid-column: 2 span;
+    }
+
+    .cabecera-fx span.titulo h1{
+        font-size: 19px;
+        font-weight: 500;
+        color: var(--color-negro-1)        
+    }
+
+    .cabecera-fx span.titulo p{
+        padding: 0; 
+        margin: 0;       
+    }
+
+    .cabecera-fx .precio p{
+       font-size: 23px;  
+       color:var(--color-negro-1);  
+       font-weight: 800;
+       margin-bottom: 0;  
+    }
+     @media (max-width: 768px) {
+       .cabecera-fx .precio p{
+       font-size: 19px;  
+       }
+       .cabecera-fx span.titulo h1{
+       font-size: 17px;
+       margin-bottom: 10px;
+        }
+    }
+/*====FIN CABECERA TITULO PRECIO====*/
+
+
+/*==GALERÍA DE FOTOS PARA PROPIEDADES- JS SWIPER==*/
+   .contenodie .swiper {
+        width: 100%;
+        margin: auto;
+    }
+
+   .contenodie .mySwiper2 {
+        padding-top:70% !important;
+        width: 100%;
+        border:solid 3px #000;
+        border-radius:8px;
+        box-sizing: border-box;
+    }
+
+   .contenodie .mySwiper2 .swiper-wrapper{
+        top:0;
+        position: absolute;
+    }
+
+    .contenodie  .mySwiper {
+        height: 20%;
+        padding: 10px 0;
+    }
+
+   .contenodie .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .contenodie .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+
+    .contenodie .swiper-slide a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .contenodie .swiper-slide a:before {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: inherit;
+        filter: blur(8px);
+        content: "";
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.6);
+        background-size: cover;
+    }
+
+   .contenodie .swiper-slide a:after{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: inherit;
+        content: "";
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: rgba(255, 255, 255, 0.4);
+   }
+
+    .contenodie .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        padding: 0px;
+    }
+
+    .miniaturas-fx-galeria{
+        padding-top: 15% !important;
+        margin-top: 10px !important;
+    }
+
+    .miniaturas-fx-galeria .swiper-wrapper{
+        position: absolute;
+        top:0;
+    }
+
+    .miniaturas-fx-galeria .swiper-slide{
+        border:solid 2px #ccc;
+        padding: 4px !important;
+        border-radius:5px;
+        box-sizing: border-box;
+
+        }
+
+    .miniaturas-fx-galeria .swiper-slide img{ 
+        padding: 0px !important;
+        object-fit: cover;
+    }
+       
+    .contenodie .swiper-button-next, .contenodie .swiper-button-prev {
+        color: #fff !important;
+        filter: drop-shadow(0px 0px 2px #000);
+        height: 60px;
+    }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+        font-size: 19px !important;
+        font-weight: bold;
+    
+    }
+
+    .contenodie .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+        pointer-events: all !important;
+    }
+
+    .miniaturas-fx-galeria .swiper-slide {
+        border: solid 2px #000;
+    }
+/*====FIN GALERÍA DE FOTOS PARA PROPIEDADES - JS SWIPER====*/
+
+/*====FORMULARIO DE CONTACTO====*/
+    .formulario-contacto {
+        margin: 0;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+    }
+
+
+    .formulario-contacto label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .formulario-contacto input[type="text"],
+    .formulario-contacto input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+        min-height: 50px;
+    }
+
+    .formulario-contacto .btn-whatsapp {    
+        width: 100%;
+        padding: 12px;
+        background-color: var(--color-maestro);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        min-height: 50px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    .formulario-contacto input[type="submit"]:hover {
+        background-color: var(--color-maestro);
+    }
+
+    @media (min-width: 767px) {
+        .formulario-fx {
+        position: -webkit-sticky; /* Soporte para Safari */
+        position: sticky;
+        top: 20px; 
+        z-index: 100; 
+        }
+    }
+/*====FORMULARIO DE CONTACTO====*/
+
 </head>
 <body>
     <header class="header">
