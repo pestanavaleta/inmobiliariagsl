@@ -401,7 +401,7 @@ export async function onRequest(context) {
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        <ul class="submenu show">
+                        <ul class="submenu">
                             <li><a href="index.html">Casas</a></li>
                             <li><a href="index.html">Apartamentos</a></li>
                             <li><a href="index.html">Oficinas</a></li>
