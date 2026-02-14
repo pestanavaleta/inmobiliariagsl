@@ -355,7 +355,8 @@ export async function onRequest(context) {
 
     .formulario-contacto input[type="text"],
     .formulario-contacto input[type="tel"],
-	 .formulario-contacto input[type="email"]{
+	 .formulario-contacto input[type="email"],
+	 .formulario-contacto select {
         width: 100%;
         padding: 10px;
         margin-bottom: 15px;
@@ -559,28 +560,53 @@ grid-template-columns: 1fr 1fr;
 						<div class="grupo-bloque-fx formulario-fx">
                         	<div class="formulario-contacto">
                             	<h3 style="margin-top:0">¿Te interesa?</h3>
-								<form method="post" action="https://systeme.io/embedded/37972521/subscription">
-								    <label for="first_name">Nombre:</label>
+								<form method="post" action="https://systeme.io/embedded/37972521/subscription" id="form-whatsapp">
+    
+    								<label for="first_name">Nombre:</label>
     								<input type="text" name="first_name" placeholder="Tu nombre" required="required" />
-									
-									<label for="phone_number">Teléfono móvil:</label>
-    								<input type="tel" name="phone_number" pattern="[0-9+ ]+" placeholder="Tu celular" title="Por favor, introduce solo números" required="required" />
 
-									<label for="email">Email:</label>
-									<input type="email" name="email" Placeholder="Tu email" required="required" />
-									
-									<input type="text" name="url" style="display:none"/>		
-  									<div class="f-row">
-    									<button type="submit" class="btn btn-whatsapp">
-    										<i class="houzez-icon icon-messaging-whatsapp" aria-hidden="true" style="font-size: 20px;"></i> 
-                							Contactar por WhatsApp
-    									</button>
-  									</div>
-  								</form>
-                            	<!--<a href="https://wa.me/3232844851?text=Hola,%20me%20interesa%20la%20propiedad:%20${getDato("TÍTULO")}%20(ID:%20${idBusqueda})" class="btn-whatsapp">
-                                	<i class="houzez-icon icon-messaging-whatsapp" style="font-size: 20px;"></i>
-                                	Contactar por WhatsApp
-                            	</a>-->                        
+    								<label>Teléfono móvil:</label>
+    								<div style="display: flex; gap: 5px;">
+        								<select id="indicativo" style="max-width: 82%;">
+            								<option value="+57" selected>🇨🇴 +57 CO</option>
+            								<option value="+52">🇲🇽 +52 MX</option>
+            								<option value="+34">🇪🇸 +34 ES</option>
+            								<option value="+1">🇺🇸 +1 US</option>
+            								<option value="+54">🇦🇷 +54 AR</option>
+            								<option value="+51">🇵🇪 +51 PE</option>
+            								<option value="+56">🇨🇱 +56 CL</option>
+            								<option value="+507">🇵🇦 +507 PA</option>
+            								<option value="+593">🇪🇨 +593 EC</option>
+            								<option value="+58">🇻🇪 +58 VE</option>
+            								<option value="+502">🇬🇹 +502 GT</option>
+            								<option value="+591">🇧🇴 +591 BO</option>
+            								<option value="+506">🇨🇷 +506 CR</option>
+            								<option value="+503">🇸🇻 +503 SV</option>
+            								<option value="+504">🇭🇳 +504 HN</option>
+            								<option value="+505">🇳🇮 +505 NI</option>
+            								<option value="+595">🇵🇾 +595 PY</option>
+            								<option value="+598">🇺🇾 +598 UY</option>
+            								<option value="+1">🇩🇴 +1 DO</option>
+            								<option value="+1">🇵🇷 +1 PR</option>
+        								</select>
+
+        								<input type="tel" id="numero_visible" placeholder="323..." style="width: 55%;" required="required" />
+    								</div>
+
+    								<input type="hidden" name="phone_number" id="phone_final" />
+
+    								<label for="email">Email:</label>
+    								<input type="email" name="email" placeholder="Tu email" required="required" />
+    
+    								<input type="text" name="url" style="display:none"/>        
+
+    								<div class="f-row">
+        								<button type="submit" class="btn btn-whatsapp">
+            								<i class="houzez-icon icon-messaging-whatsapp" aria-hidden="true" style="font-size: 20px;"></i> 
+            								Contactar por WhatsApp
+       									</button>
+    								</div>
+								</form>                            	                 
                         	</div>
 						</div>
 						<div class="grupo-bloque-fx">
@@ -721,6 +747,24 @@ function shareWhatsApp() {
     var url = window.location.href;
     window.open('https://wa.me/?text=' + encodeURIComponent(url), '_blank');
 }
+</script>
+
+<script>
+    // Seleccionamos los elementos
+    const selectInd = document.getElementById('indicativo');
+    const inputNum = document.getElementById('numero_visible');
+    const inputHidden = document.getElementById('phone_final');
+
+    // Función para concatenar y limpiar
+    function actualizarTelefono() {
+        // Quitamos cualquier espacio que el usuario ponga
+        const numeroLimpio = inputNum.value.trim().replace(/\s+/g, '');
+        inputHidden.value = selectInd.value + numeroLimpio;
+    }
+
+    // Escuchamos cambios en ambos campos
+    selectInd.addEventListener('change', actualizarTelefono);
+    inputNum.addEventListener('input', actualizarTelefono);
 </script>
 </body>
 </html>
