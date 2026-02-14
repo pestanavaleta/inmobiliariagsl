@@ -402,17 +402,9 @@ list-style: none;
 }
 .lista-caracteisticas li{
 position:relative;
+padding-left:20px;
 }
 .lista-caracteisticas li:before{
-font-family: 'houzez-iconfont' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    content: "\e91a";
     transform: translateY(-50%);
     position: absolute;
     top: 50%;
