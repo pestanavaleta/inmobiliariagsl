@@ -354,7 +354,8 @@ export async function onRequest(context) {
     }
 
     .formulario-contacto input[type="text"],
-    .formulario-contacto input[type="tel"] {
+    .formulario-contacto input[type="tel"],
+	 .formulario-contacto input[type="email"]{
         width: 100%;
         padding: 10px;
         margin-bottom: 15px;
@@ -398,6 +399,7 @@ export async function onRequest(context) {
         }
     }
 /*====FIN FORMULARIO DE CONTACTO====*/
+
 /*====LISTAS DE CARACTERISTICAS====*/
 .lista-caracteisticas{
 list-style: none;
