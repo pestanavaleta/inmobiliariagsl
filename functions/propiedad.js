@@ -559,13 +559,13 @@ grid-template-columns: 1fr 1fr;
                             	<h3 style="margin-top:0">¿Te interesa?</h3>
 								<form method="post" action="https://systeme.io/embedded/37972521/subscription">
 								    <label for="first_name">Nombre:</label>
-    								<input type="text" name="first_name" required="required" />
+    								<input type="text" name="first_name" placeholder="Tu nombre" required="required" />
 									
 									<label for="phone_number">Teléfono móvil:</label>
-    								<input type="tel" name="phone_number" required="required" />
+    								<input type="tel" name="phone_number" placeholder="Tu celular" required="required" />
 
 									<label for="email">Email:</label>
-									<input type="text" name="email" required="required" />
+									<input type="text" name="email" Placeholder="Tu email" required="required" />
 									
 									<input type="text" name="url" style="display:none"/>		
   									<div class="f-row btn-whatsapp">
