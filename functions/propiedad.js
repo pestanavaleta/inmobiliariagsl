@@ -567,7 +567,7 @@ grid-template-columns: 1fr 1fr;
 
     								<label>Teléfono móvil:</label>
     								<div style="display: flex; gap: 5px;">
-        								<select id="indicativo" style="max-width: 82%;">
+        								<select id="indicativo" style="max-width: 82px;">
             								<option value="+57" selected>🇨🇴 +57 CO</option>
             								<option value="+52">🇲🇽 +52 MX</option>
             								<option value="+34">🇪🇸 +34 ES</option>
@@ -590,7 +590,7 @@ grid-template-columns: 1fr 1fr;
             								<option value="+1">🇵🇷 +1 PR</option>
         								</select>
 
-        								<input type="tel" id="numero_visible" placeholder="323..." style="width: 55%;" required="required" />
+        								<input type="tel" id="numero_visible" placeholder="323..."  required="required" />
     								</div>
 
     								<input type="hidden" name="phone_number" id="phone_final" />
