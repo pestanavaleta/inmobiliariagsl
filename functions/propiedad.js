@@ -564,7 +564,7 @@ grid-template-columns: 1fr 1fr;
     								<input type="text" name="first_name" placeholder="Tu nombre" required="required" />
 									
 									<label for="phone_number">Teléfono móvil:</label>
-    								<input type="tel" name="phone_number" pattern="[0-9+ ]+" placeholder="Tu celular" required="required" />
+    								<input type="tel" name="phone_number" pattern="[0-9+ ]+" placeholder="Tu celular" title="Por favor, introduce solo números" required="required" />
 
 									<label for="email">Email:</label>
 									<input type="email" name="email" Placeholder="Tu email" required="required" />
