@@ -483,6 +483,7 @@ export async function onRequest(context) {
                             <div class="item-detalle-fx"><span>Ciudad:</span> <span>${getDato("CIUDAD/UBICACIÓN")}</span></div>
                             <div class="item-detalle-fx"><span>Zona:</span> <span>${getDato("ZONA")}</span></div>
 							<div class="item-detalle-fx"><span>Dirección:</span> <span>${getDato("DIRECCIÓN")}</span></div>
+							<div class="item-detalle-fx"><span>Carcateristicas:</span> <span>${getDato("CARÁCTERISTICAS")}</span></div>
                         </div>
                     </div>
                 </div>
