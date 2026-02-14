@@ -574,10 +574,10 @@ grid-template-columns: 1fr 1fr;
                                     		Enviar
                             		</button>
                         		</form>
-                            	<a href="https://wa.me/3232844851?text=Hola,%20me%20interesa%20la%20propiedad:%20${getDato("TÍTULO")}%20(ID:%20${idBusqueda})" class="btn-whatsapp">
+                            	<!--<a href="https://wa.me/3232844851?text=Hola,%20me%20interesa%20la%20propiedad:%20${getDato("TÍTULO")}%20(ID:%20${idBusqueda})" class="btn-whatsapp">
                                 	<i class="houzez-icon icon-messaging-whatsapp" style="font-size: 20px;"></i>
                                 	Contactar por WhatsApp
-                            	</a>                        
+                            	</a>-->                        
                         	</div>
 						</div>
 						<div class="grupo-bloque-fx">
