@@ -690,22 +690,6 @@ grid-template-columns: 1fr 1fr;
             });
         });
     </script>
-	<script>
-// No olvides incluir estas funciones antes de cerrar el </body>
-function shareFacebook() {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
-}
-function shareTwitter() {
-    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}`, '_blank');
-}
-function shareLinkedIn() {
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
-}
-function shareWhatsApp() {
-    window.open(`https://wa.me/?text=${encodeURIComponent(window.location.href)}`, '_blank');
-}
-</script>
-
 </body>
 </html>
     `, { headers: { "content-type": "text/html;charset=UTF-8" } });
