@@ -11,45 +11,33 @@ export async function onRequest(context) {
     const csvText = await response.text();
     const filas = csvText.split('\n').map(f => f.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/));
     const encabezados = filas[0].map(h => h.replace(/"/g, '').trim().toUpperCase());
+    
+    // 1. Buscamos la propiedad UNA SOLA VEZ
     const propiedad = filas.find(f => f[0].replace(/"/g, '').trim() === idBusqueda.trim());
-
     if (!propiedad) return new Response("Propiedad no encontrada", { status: 404 });
 
+    // 2. Definimos la función para sacar datos UNA SOLA VEZ
     const getDato = (nombre) => {
       const i = encabezados.indexOf(nombre.toUpperCase());
       return (i !== -1 && propiedad[i]) ? propiedad[i].replace(/"/g, '').trim() : "";
     };
 
-	  // ... (buscas la propiedad, ya lo tienes)
-const propiedad = filas.find(f => f[0].replace(/"/g, '').trim() === idBusqueda.trim());
+    // 3. Procesamos las características (La magia de la lista)
+    const textoCaracteristicas = getDato("CARÁCTERISTICAS");
+    const listaCaracteristicas = textoCaracteristicas 
+        ? textoCaracteristicas.split(',')
+            .map(item => `<li><i class="houzez-icon icon-check-circle-1 me-2"></i>${item.trim()}</li>`)
+            .join('')
+        : "<li>Sin características</li>";
 
-if (!propiedad) return new Response("Propiedad no encontrada", { status: 404 });
-
-// 1. Primero defines CÓMO obtener los datos
-const getDato = (nombre) => {
-  const i = encabezados.indexOf(nombre.toUpperCase());
-  return (i !== -1 && propiedad[i]) ? propiedad[i].replace(/"/g, '').trim() : "";
-};
-
-// 2. AHORA SÍ estableces la lista de características
-const textoCaracteristicas = getDato("CARÁCTERISTICAS");
-const listaCaracteristicas = textoCaracteristicas 
-    ? textoCaracteristicas.split(',')
-        .map(item => `<li><i class="houzez-icon icon-check-circle-1 me-2"></i>${item.trim()}</li>`)
-        .join('')
-    : "<li>Sin características</li>";
-
-// 3. Y aquí siguen los otros datos (fotos, metadatos, etc.)
-
-
-    // --- Lógica de Galería ---
+    // 4. Lógica de Galería
     const fotos = [];
     for (let n = 1; n <= 8; n++) {
       const u = getDato(`FOTO URL ${n}`);
       if (u && u.startsWith('http')) fotos.push(u);
     }
 
-    // --- Metadatos Dinámicos ---
+    // 5. Metadatos Dinámicos
     const tituloMeta = `${getDato("TÍTULO")} - Artefox Real Estate`;
     const descMeta = `${getDato("OPERACIÓN")} de ${getDato("TIPO")} en ${getDato("ZONA")} con: ${getDato("HABITACIONES")} habitaciones, ${getDato("BAÑOS")} baños, ${getDato("ÁREA CONSTRUIDA")} de área.`;
     const imagenMeta = fotos[0] || "";
