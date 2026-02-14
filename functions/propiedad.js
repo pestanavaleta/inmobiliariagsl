@@ -567,14 +567,14 @@ grid-template-columns: 1fr 1fr;
                         
                         </div>
                     </div>
-					<div class="grupo-bloque-fx">
-						<div class="redes-compartir">
-  							<button class="share-btn facebook" onclick="shareFacebook()"><i class="houzez-icon icon-social-media-facebook"></i></button>
-  							<button class="share-btn twitter" onclick="shareTwitter()"><i class="houzez-icon icon-x-logo-twitter-logo-2"></li></button>
-  							<button class="share-btn linkedin" onclick="shareLinkedIn()"><i class="houzez-icon icon-professional-network-linkedin"></i></button>
-  							<button class="share-btn whatsapp" onclick="shareWhatsApp()"><i class="houzez-icon icon-messaging-whatsapp"></i></button>   
-						</div>
-					</div>
+				<div class="grupo-bloque-fx">
+     <div class="redes-compartir">
+        <button class="share-btn facebook" onclick="shareFacebook()"><i class="houzez-icon icon-social-media-facebook"></i></button>
+        <button class="share-btn twitter"   onclick="shareTwitter()"><i class="houzez-icon icon-x-logo-twitter-logo-2"></i></button>
+         <button class="share-btn linkedin" onclick="shareLinkedIn()"><i class="houzez-icon icon-professional-network-linkedin"></i></button>
+         <button class="share-btn whatsapp" onclick="shareWhatsApp()"><i class="houzez-icon icon-messaging-whatsapp"></i></button>   
+    </div>
+</div>
                 </div>
             </article>
         </section>
