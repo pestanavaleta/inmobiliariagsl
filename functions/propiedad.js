@@ -557,11 +557,17 @@ grid-template-columns: 1fr 1fr;
 						<div class="grupo-bloque-fx formulario-fx">
                         	<div class="formulario-contacto">
                             	<h3 style="margin-top:0">¿Te interesa?</h3>
-								<form method="post" action="https://systeme.io/embedded/37972521/subscription"> 
+								<form method="post" action="https://systeme.io/embedded/37972521/subscription">
+								    <label for="first_name">Nombre:</label>
     								<input type="text" name="first_name" required="required" />
-    								<input type="phone_number" name="phone_number" />
+									
+									<label for="phone_number">Nombre:</label>
+    								<input type="tel" name="phone_number" required="required" />
+
+									<label for="email">Nombre:</label>
 									<input type="text" name="email" required="required" />
-									<input type="text" name="url" />		
+									
+									<input type="text" name="url" style="display:none"/>		
   									<div class="f-row btn-whatsapp">
     									<button type="submit" class="btn">
     										<i class="houzez-icon icon-messaging-whatsapp" aria-hidden="true" style="font-size: 20px;"></i> 
