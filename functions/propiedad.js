@@ -559,6 +559,21 @@ grid-template-columns: 1fr 1fr;
 						<div class="grupo-bloque-fx formulario-fx">
                         	<div class="formulario-contacto">
                             	<h3 style="margin-top:0">¿Te interesa?</h3>
+								<form class="formulario-contacto" action="#" method="post">
+                             		<label for="nombre">Nombre:</label>
+                            		<input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required="" data-sharkid="__0">
+									
+                           			<label for="telefono">Teléfono:</label>
+                            		<input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required="" data-sharkid="__1">
+
+                            		<label for="correoo">Correo:</label>
+                            		<input type="tel" id="correo" name="correo" placeholder="Tu e-mail" required="" data-sharkid="__2" data-sharklabel="email">
+
+                            		<button type="submit" class="btn-whatsapp">
+                                			<i class="houzez-icon icon-messaging-whatsapp me-2" aria-hidden="true" style="font-size: 19px;"></i> 
+                                    		Enviar
+                            		</button>
+                        		</form>
                             	<a href="https://wa.me/3232844851?text=Hola,%20me%20interesa%20la%20propiedad:%20${getDato("TÍTULO")}%20(ID:%20${idBusqueda})" class="btn-whatsapp">
                                 	<i class="houzez-icon icon-messaging-whatsapp" style="font-size: 20px;"></i>
                                 	Contactar por WhatsApp
