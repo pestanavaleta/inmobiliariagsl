@@ -568,8 +568,8 @@ grid-template-columns: 1fr 1fr;
 									<input type="text" name="email" Placeholder="Tu email" required="required" />
 									
 									<input type="text" name="url" style="display:none"/>		
-  									<div class="f-row btn-whatsapp">
-    									<button type="submit" class="btn">
+  									<div class="f-row">
+    									<button type="submit" class="btn btn-whatsapp">
     										<i class="houzez-icon icon-messaging-whatsapp" aria-hidden="true" style="font-size: 20px;"></i> 
                 							Contactar por WhatsApp
     									</button>
