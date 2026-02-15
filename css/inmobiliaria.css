@@ -329,7 +329,7 @@ button, input, textarea, option, form, select, radio, check {
 	padding: 2cqw;
     }
     .banner-inicio .contenedor h1{
-	font-size: 24vw;
+	font-size: 4vw;
     }
     .banner-inicio .contenedor p{
 	color: #fff;
@@ -955,6 +955,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
