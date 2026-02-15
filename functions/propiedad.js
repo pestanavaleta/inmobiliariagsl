@@ -455,22 +455,23 @@ grid-template-columns: 1fr 1fr;
 			<nav class="menu">
                 <button class="menu-toggle">×</button>
                 <ul>
-                    <li><a href="index.html" class="item-activo">Inicio</a></li>
-                    <li><a href="propiedades.html">Propiedades</a></li>
-                    <li class="has-submenu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="propiedades.html" class="item-activo">Propiedades</a></li>
+                 	<li><a href="#" class="cta-boton"><i class="houzez-icon icon-messaging-whatsapp" aria-hidden="true" style="font-size: 20px;"></i>Contacto</a></li>
+                    <!--Submenú <li class="has-submenu">
                         <a href="#" class="submenu-trigger">
                             Cetegorías
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="icon-arrow">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        <ul class="submenu">
+                         <ul class="submenu">
                             <li><a href="index.html">Casas</a></li>
                             <li><a href="index.html">Apartamentos</a></li>
                             <li><a href="index.html">Oficinas</a></li>
-                            <li><a href="index.html">Bodegas</a></li>
+                            <li><a href="index.html">Bodegas</a></li>--
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
             </nav>
         </div>
