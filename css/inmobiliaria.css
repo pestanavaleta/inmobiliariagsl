@@ -854,7 +854,7 @@ button, input, textarea, option, form, select, radio, check {
     
   /*====ESTILOS FILTRO ACTIVOS====*/
 .contenedor-resultados {
-    margin: 30px auto;
+    margin: 10px auto;
     padding: 0 15px;
 }
 
@@ -955,5 +955,6 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
