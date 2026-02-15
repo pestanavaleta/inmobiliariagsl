@@ -828,7 +828,7 @@ button, input, textarea, option, form, select, radio, check {
     margin-top: 10px;
     }
 
-    .barra-busqueda.abierta {
+    .barra-busqueda.activo {
     display: flex;
     display: flex;
     box-sizing: border-box;
@@ -955,6 +955,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
