@@ -453,7 +453,7 @@ button, input, textarea, option, form, select, radio, check {
 
 /*====SERVICIOS====*/
 .servicios {
-	background: var(--color-gris-1);
+	background: #fff;
 }
 .grid-servicios{
 	display: grid;
@@ -959,6 +959,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
