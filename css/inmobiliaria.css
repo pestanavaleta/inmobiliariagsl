@@ -264,7 +264,7 @@ button, input, textarea, option, form, select, radio, check {
     }
 }
 
- .cta-boton{
+ .header .menu ul li a.cta-boton{
     background: var(--color-maestro);
     color: #fff;
     border-radius: 30px;
@@ -969,6 +969,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
