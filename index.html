@@ -337,10 +337,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>${p.titulo || (p.operacion + ' en ' + p.zona)}</h2>
                     <span class="direccion"><i class="houzez-icon icon-pin me-2"></i> ${p.dir} - ${p.zona}</span>
                     <span class="detalle">
-                        <span class="doemitorios"><i class="houzez-icon icon-hotel-double-bed-1"></i> ${p.habs}</span>
-                        <span class="banos"><i class="houzez-icon icon-bathroom-shower-1"></i> ${p.banos}</span>
-                        <span class="area"><i class="houzez-icon icon-ruler-triangle"></i> ${p.area} m²</span>
-                        <span class="garaje"><i class="houzez-icon icon-car-1 me-2"></i> ${p.parking}</span>
+                     	${p.habs && p.habs !== "0" && p.habs.toString().trim() !== "" ? `
+    						<span class="dormitorios"><i class="houzez-icon icon-hotel-double-bed-1"></i> ${p.habs}</span>
+					 	` : ''}
+
+						${p.banos && p.banos !== "0" && p.banos.toString().trim() !== "" ? `
+    						<span class="banos"><i class="houzez-icon icon-bathroom-shower-1"></i> ${p.banos}</span>
+						` : ''}
+
+						${p.area && p.area !== "0" && p.area.toString().trim() !== "" ? `
+    						<span class="area"><i class="houzez-icon icon-ruler-triangle"></i> ${p.area} m²</span>
+						` : ''}
+
+						${p.parking && p.parking !== "0" && p.parking.toString().trim() !== "" ? `
+    						<span class="garaje"><i class="houzez-icon icon-car-1 me-2"></i> ${p.parking}</span>
+						` : ''}
                     </span>
                     <span class="precio">${p.moneda} ${Number(p.precio).toLocaleString('es-CO')}</span>
                 `;
@@ -463,6 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
