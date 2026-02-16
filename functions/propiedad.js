@@ -163,7 +163,7 @@ export async function onRequest(context) {
 		padding: 23px;
 		border-radius: 8px;      
 	}
-	.detalle-propiedad .bloques  .grupo-bloque-fx::first-child{
+	.detalle-propiedad .bloques  .grupo-bloque-fx:first-child{
 	  	margin-to: 20px;	
 	}
 
