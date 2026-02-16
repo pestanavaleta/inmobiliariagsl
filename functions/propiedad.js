@@ -681,7 +681,6 @@ grid-template-columns: 1fr 1fr;
             <article>
                 <h3>Links rapidos</h3>
                 <ul>
-                    <li><a href="#">Propiedades</a></li>
                     <li><a href="#">Términos y Condiciones</a></li>
                     <li><a href="#">Política de Privacidad</a></li>
                     <li><a href="#">Política de Cookies</a></li> 
@@ -691,10 +690,10 @@ grid-template-columns: 1fr 1fr;
             <article>
                 <h3>Categorías</h3>
                 <ul>
-                    <li><a href="#">Casas</a></li>
-                    <li><a href="#">Apartamentos</a></li>
-                    <li><a href="#">Oficinas</a></li>
-                    <li><a href="#">Apartaestudio</a></li> 
+                    <li><a href="index">Propiedades</a></li>
+                    <li><a href="index?nosotros">Nosotros</a></li>
+                    <li><a href="#arriba" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Ir al inicio</a></li>
+                   
     
                 </ul>
             </article>
@@ -704,7 +703,6 @@ grid-template-columns: 1fr 1fr;
                 <h3>Contácto</h3>
                 <ul> 
                     <li><i class="houzez-icon icon-mobile-phone"></i> <span><span>+ 57</span> 3232844851</span></li>
-                    <li><i class="houzez-icon icon-phone"></i>  601 7783831</li> 
                     <li><i class="houzez-icon icon-pin me-2"></i> Calle 80 #65 15. Bogotá - Colombia</li> 
                     <li><i class="houzez-icon icon-envelope"></i> <span>email@artefox.com</span></li> 
                 </ul>
