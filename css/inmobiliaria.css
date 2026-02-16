@@ -956,7 +956,7 @@ button, input, textarea, option, form, select, radio, check {
 	  gap:3px;
   }
 .disparador-movil{
-	margin: 10px 0;
+	margin: 10px auto;
 }
   .bloque-derecho {
     width: 100%;
@@ -969,6 +969,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
