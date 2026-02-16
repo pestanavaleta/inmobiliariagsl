@@ -445,7 +445,7 @@ button, input, textarea, option, form, select, radio, check {
     padding: 15px 2px;
 }
 .propiedades .grid-propiedades article .precio{
-	margin-top: 10px;
+	margin-top: 15px;
 	font-weight: 800;
 	font-size: 20px;
 	display: flex;
@@ -969,6 +969,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
