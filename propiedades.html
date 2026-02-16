@@ -444,10 +444,35 @@ if (btnFiltros && formulario) {
         }
     });
 }
+
+
+
+/*====RETRASO ANCLA====*/
+const ejecutarScrollAncla = () => {
+    if (window.location.hash) {
+        const id = window.location.hash.substring(1);
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            // Un pequeño retraso para asegurar que el render de las tarjetas no mueva el scroll
+            setTimeout(() => {
+                elemento.scrollIntoView({ behavior: 'smooth' });
+            }, 300); 
+        }
+    }
+};
+
+// 1. Ejecutar al cargar la página (con retraso para esperar al CSV)
+window.addEventListener('load', ejecutarScrollAncla);
+
+// 2. Ejecutar si el hash cambia sin recargar la página (clics en el menú)
+window.addEventListener('hashchange', ejecutarScrollAncla);
+/*====FIN RETRASO ANCLA====*/
+
 });
 </script>
 </body>
 </html>
+
 
 
 
