@@ -220,7 +220,7 @@ export async function onRequest(context) {
 
 /*==GALERÍA DE FOTOS PARA PROPIEDADES- JS SWIPER==*/
    .galeria-fx{
-     margin-bottom: 10px;
+     margin-bottom: 20px;
    }
    .contenodie .swiper {
         width: 100%;
