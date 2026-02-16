@@ -147,7 +147,7 @@ export async function onRequest(context) {
 
  /*====BLOQUE DETALLE ICONOS PROPIEDAD UNICA====*/
    .grupo-detalle {
-        margin-top: 20px;   
+        margin-top: 0px;   
     }
 
     .detalle-fx{ 
@@ -163,10 +163,7 @@ export async function onRequest(context) {
 		padding: 23px;
 		border-radius: 8px;      
 	}
-	.detalle-propiedad .bloques  .grupo-bloque-fx:first-child{
-	  	margin-to: 20px;	
-	}
-
+	
     @media (max-width: 768px) {
         .detalle-fx .bloque-texto-fx{
         display: none;
@@ -222,6 +219,9 @@ export async function onRequest(context) {
 
 
 /*==GALERÍA DE FOTOS PARA PROPIEDADES- JS SWIPER==*/
+   .galeria-fx{
+     margin-bottom: 10px;
+   }
    .contenodie .swiper {
         width: 100%;
         margin: auto;
