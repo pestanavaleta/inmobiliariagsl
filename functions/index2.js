@@ -100,7 +100,7 @@ function generarPlantilla(tarjetas, total) {
                 <button class="menu-close">&times;</button>
                 <ul>
                     <li><a href="index">Propiedades</a></li>
-                    <li><a href="?nosotros">Nosotros</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#" class="cta-boton"><i class="houzez-icon icon-messaging-whatsapp" style="font-size: 20px;"></i>Contacto</a></li>
                 </ul>
             </nav>
@@ -376,6 +376,7 @@ function generarPlantilla(tarjetas, total) {
 </body>
 </html>`;
 }
+
 
 
 
