@@ -344,7 +344,7 @@ function generarPlantilla(tarjetas, total) {
             function crearEtiqueta(texto, campo) {
                 const div = document.createElement('div');
                 div.className = 'etiqueta';
-                div.innerHTML = '<span>'+texto+'</span><button type="button">×</button>';
+                div.innerHTML = '<span>'+texto+'</span><button type="button" class="boton-quitar">×</button>';
                 div.querySelector('button').onclick = () => {
                     if(campo === 'precio') {
                         formulario.querySelector('input[name="min-precio"]').value = "";
@@ -376,6 +376,7 @@ function generarPlantilla(tarjetas, total) {
 </body>
 </html>`;
 }
+
 
 
 
