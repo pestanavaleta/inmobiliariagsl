@@ -223,7 +223,7 @@ function generarPlantilla(tarjetas, total, c) {
             </div>
         </section>
 
-        <section id="nosotros" class="servicios" style="padding: 60px 0; background: #fff;">
+        <section id="nosotros" class="servicios relleno-1">
             <div class="contenedor" style="text-align:center;">
                 <h2 style="margin-bottom:20px;">Servicios profesionales</h2>
                 <p style="max-width:800px; margin: 0 auto 40px;">${c.descripcion}</p>
@@ -347,6 +347,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
