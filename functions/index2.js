@@ -163,7 +163,24 @@ function generarPlantilla(tarjetas, total, c) {
     <main>
         <section class="propiedades relleno-5">
             <div class="contenedor">
-                <p class="conteo-propiedades"><span id="total-propiedades">${total}</span> Propiedades encontradas</p>
+                <div class="contenedor-resultados" style="display:block;">
+                    <div class="fila-info">
+                        <div class="bloque-izquierdo">
+                            <p class="conteo-propiedades"><span id="total-propiedades">${total}</span> Propiedades encontradas</p>
+                            <div class="etiquetas-filtros" style="display: none;">
+                                <span class="texto-pequeno">Filtros activos:</span>
+                                <div id="contenedor-etiquetas-dinamicas" style="display:contents;"></div>
+                                <button class="boton-limpiar">Borrar todo</button>
+                            </div>
+                        </div>
+                        <div class="bloque-derecho">
+                            <select class="selector-orden">
+                                <option value="precio-bajo">Precio más bajo</option>
+                                <option value="precio-alto">Precio más alto</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div class="grid-propiedades" id="listado-propiedades">${tarjetas}</div>
             </div>
         </section>
@@ -203,25 +220,38 @@ function generarPlantilla(tarjetas, total, c) {
         </div>
     </footer>
 
+
     <script>
-        // ... (Tu lógica de filtrado se mantiene igual aquí) ...
         document.addEventListener('DOMContentLoaded', () => {
-            const formulario = document.getElementById('formulario-busqueda');
             const listado = document.getElementById('listado-propiedades');
+            const formulario = document.getElementById('formulario-busqueda');
+            const contenedorFiltros = document.querySelector('.etiquetas-filtros');
+            const contenedorEtiquetas = document.getElementById('contenedor-etiquetas-dinamicas');
+            const btnLimpiar = document.querySelector('.boton-limpiar');
+            const selectorOrden = document.querySelector('.selector-orden');
             let tarjetasArr = Array.from(listado.getElementsByTagName('article'));
 
-            formulario.addEventListener('input', () => {
-                const query = formulario.ubicacion.value.toLowerCase();
+            function normalizar(texto) {
+                return texto ? texto.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase() : "";
+            }
+
+            function filtrar() {
+                const query = normalizar(formulario.ubicacion.value);
                 const op = formulario.operacion.value;
                 const tipo = formulario.tipo.value;
-
+                const min = parseInt(formulario.querySelector('input[name="min-precio"]').value) || 0;
+                const max = parseInt(formulario.querySelector('input[name="max-precio"]').value) || Infinity;
+                
                 let c = 0;
                 tarjetasArr.forEach(t => {
-                    const matchText = t.dataset.ubicacion.toLowerCase().includes(query);
+                    const text = normalizar(t.dataset.ubicacion);
+                    const precio = parseInt(t.dataset.precio) || 0;
+                    const matchText = query.length < 3 || text.includes(query);
                     const matchOp = op === "" || t.dataset.operacion === op;
                     const matchTipo = tipo === "" || t.dataset.tipo === tipo;
+                    const matchPrecio = precio >= min && precio <= max;
 
-                    if(matchText && matchOp && matchTipo) {
+                    if(matchText && matchOp && matchTipo && matchPrecio) {
                         t.style.display = "grid";
                         c++;
                     } else {
@@ -229,11 +259,56 @@ function generarPlantilla(tarjetas, total, c) {
                     }
                 });
                 document.getElementById('total-propiedades').innerText = c;
-            });
+                actualizarEtiquetas(op, tipo, min, max);
+            }
+
+            function actualizarEtiquetas(op, tipo, min, max) {
+                contenedorEtiquetas.innerHTML = '';
+                let activo = false;
+                if(op) { crearEtiqueta(op, 'operacion'); activo = true; }
+                if(tipo) { crearEtiqueta(tipo, 'tipo'); activo = true; }
+                if(min > 0 || max < Infinity) { 
+                    crearEtiqueta('Precio: ' + min.toLocaleString() + '...', 'precio'); 
+                    activo = true; 
+                }
+                contenedorFiltros.style.display = activo ? 'flex' : 'none';
+            }
+
+            function crearEtiqueta(texto, campo) {
+                const div = document.createElement('div');
+                div.className = 'etiqueta';
+                div.innerHTML = '<span>'+texto+'</span><button type="button" class="boton-quitar">×</button>';
+                div.querySelector('button').onclick = () => {
+                    if(campo === 'precio') {
+                        formulario.querySelector('input[name="min-precio"]').value = "";
+                        formulario.querySelector('input[name="max-precio"]').value = "";
+                    } else {
+                        formulario.querySelector('[name="'+campo+'"]').value = "";
+                    }
+                    filtrar();
+                };
+                contenedorEtiquetas.appendChild(div);
+            }
+
+            if (selectorOrden) {
+                selectorOrden.addEventListener('change', () => {
+                    const orden = selectorOrden.value;
+                    tarjetasArr.sort((a, b) => {
+                        const pA = parseInt(a.dataset.precio || 0);
+                        const pB = parseInt(b.dataset.precio || 0);
+                        return orden === 'precio-bajo' ? pA - pB : pB - pA;
+                    }).forEach(t => listado.appendChild(t));
+                });
+            }
+
+            formulario.addEventListener('input', filtrar);
+            btnLimpiar.onclick = () => { formulario.reset(); filtrar(); };
+            document.getElementById('abrir-filtros').onclick = () => formulario.classList.toggle('activo');
         });
     </script>
 </body>
 </html>`;
 }
+
 
 
