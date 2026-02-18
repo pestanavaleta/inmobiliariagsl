@@ -275,6 +275,9 @@ button, input, textarea, option, form, select, radio, check {
     font-size: 13px;
     letter-spacing: 1px;
 }
+ .header .menu ul li a.cta-boton .houzez-icon{
+	 font-size:17px;
+ }
 /*===FIN HEADER===*/
 
 
@@ -981,6 +984,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
