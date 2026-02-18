@@ -703,9 +703,7 @@ grid-template-columns: 1fr 1fr;
 	<footer class="footer relleno-1">
         <div class="contenedor">
             <article class="info">
-                ${config.logo ? `<img src="${config.logo}" alt="Logo ${config.nombre}">` : ''} 
-                <h4>RealSate</h4>                 
-                
+                ${config.logo ? `<img src="${config.logo}" alt="Logo ${config.nombre}">` : ''}                    
                 <ul class="redes">
                 	${config.fb ? `<li><a href="${config.fb}" target="_blank"><i class="houzez-icon icon-social-media-facebook"></i></a></li>` : ''}
     				${config.ig ? `<li><a href="${config.ig}" target="_blank"><i class="houzez-icon icon-social-instagram"></i></a></li>` : ''}
@@ -717,7 +715,7 @@ grid-template-columns: 1fr 1fr;
             
 
             <article>
-                <h3>Información Legal</h3>
+                <h2>Información Legal</h2>
                    <ul>
     				<li><a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a></li>
     				<li><a href="politica-de-privacidad.html" target="_blank">Política de Privacidad</a></li>
@@ -726,7 +724,7 @@ grid-template-columns: 1fr 1fr;
             </article>
 
             <article>
-                <h3>Menú rápido</h3>
+                <h2>Menú rápido</h2>
                 <ul>
                     <li><a href="index">Propiedades</a></li>
                     <li><a href="index?nosotros">Nosotros</a></li>
@@ -736,7 +734,7 @@ grid-template-columns: 1fr 1fr;
 
 
             <article class="contacto">
-                <h3>Contácto</h3>
+                <h2>Contácto</h2>
                 <ul> 
                     <li><i class="houzez-icon icon-mobile-phone"></i> <span><span>+ 57</span> 3232844851</span></li>
                     <li><i class="houzez-icon icon-pin me-2"></i> Calle 80 #65 15. Bogotá - Colombia</li> 
