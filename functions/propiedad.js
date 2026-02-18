@@ -106,8 +106,8 @@ export async function onRequest(context) {
     <script src="/script.js"></script>
 
     <style>
-	   :root { --color-maestro: :root { --color-maestro: ${config.color};}
-         body{
+	:root { --color-maestro: ${config.color};}
+    body{
         background: var(--color-gris-1);
     }
 
