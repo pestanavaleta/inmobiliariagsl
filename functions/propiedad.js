@@ -737,9 +737,9 @@ grid-template-columns: 1fr 1fr;
             <article class="contacto">
                 <h2>Contácto</h2>
                 <ul> 
-               		${config.telefono ? `<li><i class="houzez-icon icon-mobile-phone"></i> <a href="tel:${config.telefono}">${config.telefono}</a></li>` : ''}
-    				${config.email ? `<li><i class="houzez-icon icon-envelope"></i> <a href="mailto:${config.email}">${config.email}</a></li>` : ''}
-    				${config.direccion ? `<li><i class="houzez-icon icon-pin"></i> ${config.direccion}</li>` : ''}
+               		${c.telefono ? `<li><i class="houzez-icon icon-mobile-phone"></i> <a href="tel:${c.telefono}">${c.telefono}</a></li>` : ''}
+    				${c.email ? `<li><i class="houzez-icon icon-envelope"></i> <a href="mailto:${c.email}">${c.email}</a></li>` : ''}
+    				${c.direccion ? `<li><i class="houzez-icon icon-pin"></i> ${c.direccion}</li>` : ''}
                 </ul>
             </article>
 
