@@ -386,3 +386,4 @@ function generarPlantilla(tarjetas, total, c) {
 
 
 
+
