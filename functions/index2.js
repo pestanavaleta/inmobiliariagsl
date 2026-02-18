@@ -267,7 +267,7 @@ function generarPlantilla(tarjetas, total, c) {
                 </ul>
             </article>
             <article>
-                <h3>Contacto</h3>
+                <h2>Contacto</h2>
 				<ul>
                 	<li><i class="houzez-icon icon-mobile-phone"></i> ${c.telefono}</li>
                 	<li><i class="houzez-icon icon-envelope"></i> ${c.email}</li>
@@ -366,6 +366,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
