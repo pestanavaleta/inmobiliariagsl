@@ -835,7 +835,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('email').value;
         const telefono = inputHidden.value;
         const urlPropiedad = window.location.href;
-        const miTelefono = '573232844851'; // Tu número
+        const miTelefono = '${waLimpio}'; // Tu número
 
         // Construimos el mensaje de WhatsApp
         let mensaje = 'Hola Artefox! 👋%0A' +
