@@ -118,18 +118,19 @@ button, input, textarea, option, form, select, radio, check {
   }
 
 .contenedor-header h1.logo a{
-	justify-content: center;
+j	ustify-content: start;
     display: flex;
     padding: 10px 0;
     align-items: center;
     font-size: 23px;
-    gap: 5px;
+    gap: 5px
 }
 
 .header .logo img{
 	max-height: 90px;
     object-fit: contain;
-    max-width: 250px;
+    max-width: 400px;
+	width:80%;
 
 }
 
@@ -984,6 +985,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
