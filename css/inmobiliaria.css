@@ -394,6 +394,7 @@ j	ustify-content: start;
     grid-row: span 5;
     grid-template-rows: subgrid;
     grid-gap: 0;
+	cursor:pointer;
 }
 
 .propiedades .grid-propiedades article:hover{
@@ -985,6 +986,7 @@ j	ustify-content: start;
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
