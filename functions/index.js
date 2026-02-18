@@ -143,7 +143,7 @@ function generarPlantilla(tarjetas, total, c) {
     <header class="header">
         <div class="contenedor-header">
             <h1 class="logo"><a href="index">
-                ${c.logo ? `<img src="${c.logo}" alt="Logo">` : ''} ${c.nombre}
+                ${c.logo ? `<img src="${c.logo}" alt="Logo  ${c.nombre}">` : ''}
             </a></h1>
             <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
             <nav class="menu">
@@ -371,6 +371,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
