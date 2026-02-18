@@ -124,6 +124,7 @@ function generarPlantilla(tarjetas, total, c) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
     <link rel="stylesheet" type="text/css" href="css/inmobiliaria.css">
     <link rel="stylesheet" type="text/css" href="css/icons.css">
+    <script src="script.js"></script>
     <style>
         :root { --color-maestro: ${c.color}; }
         body{ background: #f8f9fa; }
@@ -309,6 +310,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
