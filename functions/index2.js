@@ -243,10 +243,10 @@ function generarPlantilla(tarjetas, total, c) {
         <div class="contenedor info">
             <article class="info">
                 ${c.logo ? `<img src="${c.logo}" style="max-width:150px;">` : `<h2>${c.nombre}</h2>`}
-                <p style="margin-top:20px;">© 2026 ${c.nombre}</p>          
+                <p>© 2026 ${c.nombre}</p>          
 				    <ul class="redes">
                     	<li>${c.fb ? `<a href="${c.fb}"><i class="houzez-icon icon-social-media-facebook"></i></a>` : ''}</li>
-                    	<li>${c.ig ? `<a href="${c.ig}"><i class="houzez-icon  icon-social-instagram"></i></a>` : ''}</li>
+                    	<li>${c.ig ? `<a href="${c.ig}"><i class="houzez-icon icon-social-instagram"></i></a>` : ''}</li>
 						<li>${c.x ? `<a href="${c.x}"><i class="houzez-icon icon-x-logo-twitter-logo-2"></i></a>` : ''}</li>
 						<li>${c.li ? `<a href="${c.li}"><i class="houzez-icon icon-professional-network-linkedin"></i></a>` : ''}</li>
 					</ul>
@@ -260,15 +260,17 @@ function generarPlantilla(tarjetas, total, c) {
     				<li><a href="politica-de-cookies.html" target="_blank">Política de Cookies</a></li>
 				</ul>
             </article>
+			
             <article>
                 <h2>Menú rápido</h2>
                 <ul>
                    <li><a href="index">Propiedades</a></li>
                     <li><a href="index?nosotros">Nosotros</a></li>
-                    <li><a href="#arriba" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Ir al iniio</a></li> 
+                    <li><a href="#arriba" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Ir al inicio</a></li> 
     
                 </ul>
             </article>
+			
             <article>
                 <h2>Contacto</h2>
 				<ul>
@@ -369,6 +371,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
