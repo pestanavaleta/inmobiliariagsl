@@ -704,7 +704,7 @@ grid-template-columns: 1fr 1fr;
 	<footer class="footer relleno-1">
         <div class="contenedor">
             <article class="info">
-                ${config.logo ? `<img src="${config.logo}" alt="Logo ${config.nombre}">` : ''}                    
+                ${config.logo ? `<img src="${config.logo}" class="logo-footer" alt="Logo ${config.nombre}">` : ''}                    
                 <ul class="redes">
                 	${config.fb ? `<li><a href="${config.fb}" target="_blank"><i class="houzez-icon icon-social-media-facebook"></i></a></li>` : ''}
     				${config.ig ? `<li><a href="${config.ig}" target="_blank"><i class="houzez-icon icon-social-instagram"></i></a></li>` : ''}
