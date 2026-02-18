@@ -54,10 +54,6 @@ button, input, textarea, option, form, select, radio, check {
     font-family: 'Poppins', sans-serif;
 }
 
-.logo-footer{
-	max-height: 110px;
-    margin-bottom: 8px;
-}
 
 .contenedor{
 	max-width: 1200px;
@@ -519,6 +515,11 @@ button, input, textarea, option, form, select, radio, check {
 
 }
 
+.logo-footer{
+	max-height: 110px;
+    margin-bottom: 8px;
+}
+
 .footer h2{
     font-size: 23px;
     text-transform: uppercase;
@@ -548,9 +549,6 @@ button, input, textarea, option, form, select, radio, check {
     margin-top: 10px;
 }
 
-.footer .info .logo-footer{
-    max-width: 200px;
-}
 
 .footer  .houzez-icon{
     color:var(--color-maestro);
@@ -982,6 +980,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
