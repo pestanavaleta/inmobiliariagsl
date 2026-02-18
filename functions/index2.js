@@ -141,6 +141,7 @@ function generarPlantilla(tarjetas, total, c) {
             </a></h1>
             <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
             <nav class="menu">
+                <button class="menu-close">×</button>
                 <ul>
                     <li><a href="index">Propiedades</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
@@ -154,10 +155,36 @@ function generarPlantilla(tarjetas, total, c) {
         <div class="contenedor"><h1>${c.bannerTitulo.replace(/\n/g, '<br>')}</h1></div>
     </section>
 
-    <form id="formulario-busqueda" class="barra-busqueda">
-        <div class="item-busqueda"><label>Ubicación</label><input type="text" name="ubicacion" placeholder="Ciudad o zona.."></div>
-        <div class="item-busqueda"><label>Operación</label><select name="operacion"><option value="">Todas</option><option value="Venta">Venta</option><option value="Alquiler">Alquiler</option></select></div>
-        <div class="item-busqueda"><label>Inmueble</label><select name="tipo"><option value="">Todos</option><option value="Apartamento">Apartamento</option><option value="Casa">Casa</option></select></div>
+       <form id="formulario-busqueda" class="barra-busqueda">
+        <div class="item-busqueda">
+            <label>Ubicación</label>
+            <input type="text" name="ubicacion" placeholder="Ubicación..">
+        </div>
+        <div class="item-busqueda">
+            <label>Operación</label>
+            <select name="operacion">
+                <option value="">Cualquiera</option>
+                <option value="Venta">Venta</option>
+                <option value="Alquiler">Alquiler</option>
+            </select>
+        </div>
+        <div class="item-busqueda">
+            <label>Inmueble</label>
+            <select name="tipo">
+                <option value="">Todos</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Casa">Casa</option>
+                <option value="Oficina">Oficina</option>
+            </select>
+        </div>
+        <div class="item-busqueda">
+            <label>Precio Mín</label>
+            <input type="number" name="min-precio" placeholder="0">
+        </div>
+        <div class="item-busqueda">
+            <label>Precio Máx</label>
+            <input type="number" name="max-precio" placeholder="Máx">
+        </div>
         <button type="submit" class="boton-buscar">Buscar</button>
     </form>
 
@@ -310,6 +337,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
