@@ -49,7 +49,7 @@ export async function onRequest(context) {
 
 			const urlActual = context.request.url;
 			const whatsappOriginal = obtenerC("WHATSAPP");
-    		const waLimpio = config.whatsapp1.replace(/\D/g, ''); // Deja solo los números
+    		const waLimpio = config.whatsappOriginal.replace(/\D/g, ''); // Deja solo los números
     		const mensajeWA = encodeURIComponent(`Hola ${urlActual}`);
 
         	// --- PROCESAR PROPIEDADES (Hoja 1) ---
@@ -392,6 +392,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
