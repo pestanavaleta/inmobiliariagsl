@@ -2,12 +2,9 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const idBusqueda = url.searchParams.get('id');
   const anioActual = new Date().getFullYear();
-  // Capturamos la URL completa de la propiedad actual
-const urlActual = context.request.url;
-// Limpiamos el WhatsApp por si el usuario puso espacios o el +
-const waLimpio = config.whatsapp1.replace(/\D/g, ''); // Deja solo los números
-// Creamos el mensaje codificado para URL
-const mensajeWA = encodeURIComponent(`¡Hola! 👋 Me interesa esta propiedad: ${urlActual}`);
+  const urlActual = context.request.url;
+  const waLimpio = config.whatsapp1.replace(/\D/g, ''); // Deja solo los números
+  const mensajeWA = encodeURIComponent(`¡Hola! 👋 Me interesa esta propiedad: ${urlActual}`);
 
   if (!idBusqueda) return new Response("ID no proporcionado", { status: 400 });
 
