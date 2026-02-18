@@ -247,6 +247,7 @@ function generarPlantilla(tarjetas, total, c) {
                 <div style="margin-top:20px;">
                     ${c.fb ? `<a href="${c.fb}" style="color:#fff; margin-right:10px;"><i class="houzez-icon icon-social-media-facebook"></i></a>` : ''}
                     ${c.ig ? `<a href="${c.ig}" style="color:#fff; margin-right:10px;"><i class="houzez-icon icon-social-instagram"></i></a>` : ''}
+					${c.x ? `<a href="${c.x}" style="color:#fff; margin-right:10px;"><i class="houzez-icon icon-social-instagram"></i></a>` : ''}
                 </div>
             </article>
             <article>
@@ -366,6 +367,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
