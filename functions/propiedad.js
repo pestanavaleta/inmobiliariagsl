@@ -2,9 +2,7 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const idBusqueda = url.searchParams.get('id');
   const anioActual = new Date().getFullYear();
-  const urlActual = context.request.url;
-  const waLimpio = config.whatsapp1.replace(/\D/g, ''); // Deja solo los números
-  const mensajeWA = encodeURIComponent(`¡Hola! 👋 Me interesa esta propiedad: ${urlActual}`);
+
 
   if (!idBusqueda) return new Response("ID no proporcionado", { status: 400 });
 
@@ -24,6 +22,9 @@ export async function onRequest(context) {
     // --- PROCESAR PROPIEDADES ---
     const filas = csvText.split(/\r?\n/).filter(f => f.trim() !== "").map(f => f.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/));
     const encabezados = filas[0].map(h => h.replace(/"/g, '').trim().toUpperCase());
+	const urlActual = context.request.url;
+    const waLimpio = config.whatsapp1.replace(/\D/g, ''); // Deja solo los números
+    const mensajeWA = encodeURIComponent(`¡Hola! 👋 Me interesa esta propiedad: ${urlActual}`);
 
     // --- PROCESAR CONFIGURACIÓN ---
     const filasC = csvConfig.split(/\r?\n/).filter(f => f.trim() !== "");
