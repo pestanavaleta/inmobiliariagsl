@@ -160,7 +160,10 @@ function generarPlantilla(tarjetas, total, c) {
     <section class="banner-inicio">
         <div class="contenedor"><h1>${c.bannerTitulo.replace(/\n/g, '<br>')}</h1></div>
     </section>
-
+ <button type="button" class="disparador-movil" id="abrir-filtros">
+        <i class="houzez-icon icon-Filter-Faders"></i>
+        Buscar y Filtrar
+    </button>
        <form id="formulario-busqueda" class="barra-busqueda">
         <div class="item-busqueda">
             <label>Ubicación</label>
@@ -343,6 +346,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
