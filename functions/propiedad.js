@@ -4,18 +4,54 @@ export async function onRequest(context) {
 
   if (!idBusqueda) return new Response("ID no proporcionado", { status: 400 });
 
-  const SHEET_URL = "https://docs.google.com/spreadsheets/d/1VctscCRyoQ-sdWa1vlGG0xsjjGY5Jznw6LaK20syz3g/export?format=csv";
+  const SHEET_URL = "https://docs.google.com/spreadsheets/d/1VctscCRyoQ-sdWa1vlGG0xsjjGY5Jznw6LaK20syz3g/export?format=csv&gid=0";
+  const URL_CONFIG = "https://docs.google.com/spreadsheets/d/1VctscCRyoQ-sdWa1vlGG0xsjjGY5Jznw6LaK20syz3g/export?format=csv&gid=563916861";
 
   try {
-    const response = await fetch(SHEET_URL);
-    const csvText = await response.text();
-    const filas = csvText.split('\n').map(f => f.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/));
+    // ESTA ES LA PARTE QUE TE FALTABA: Pedir ambos al mismo tiempo
+    const [resProp, resConfig] = await Promise.all([
+      fetch(SHEET_URL),
+      fetch(URL_CONFIG)
+    ]);
+
+    const csvText = await resProp.text();
+    const csvConfig = await resConfig.text(); // Ahora csvConfig ya tiene datos
+
+    // --- PROCESAR PROPIEDADES ---
+    const filas = csvText.split(/\r?\n/).filter(f => f.trim() !== "").map(f => f.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/));
     const encabezados = filas[0].map(h => h.replace(/"/g, '').trim().toUpperCase());
-    
-    // 1. Buscamos la propiedad UNA SOLA VEZ
+
+    // --- PROCESAR CONFIGURACIÓN ---
+    const filasC = csvConfig.split(/\r?\n/).filter(f => f.trim() !== "");
+    const cabeceraC = filasC[0].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(h => h.replace(/^"|"$/g, '').trim().toUpperCase());
+    const datosC = filasC[1].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+
+    const obtenerC = (nombre) => {
+      const i = cabeceraC.indexOf(nombre.toUpperCase());
+      if (i === -1) return "";
+      return datosC[i] ? datosC[i].replace(/^"|"$/g, '').trim() : "";
+    };
+
+    const config = {
+    	nombre: obtenerC("NOMBRE INMOBILIARIA"),
+        descripcion: obtenerC("DESCRIPCION EMPRESA"),
+        logo: obtenerC("URL LOGO"),
+        bannerTitulo: obtenerC("TITULO BANNER"),
+        bannerImg: obtenerC("URL IMAGEN DEL BANNER"),
+        color: obtenerC("COLOR SITIO") || "#1e2854",
+        telefono: obtenerC("TELEFONO SITIO"),
+        direccion: obtenerC("DIRECION EMPRESA"),
+        email: obtenerC("EMAIL SITIO"),
+        fb: obtenerC("URL FACEBOOK"),
+        ig: obtenerC("URL INSTAGRAM"),
+        x: obtenerC("URL X"),
+        li: obtenerC("URL LINKEDIN")
+    };
+
+    // 1. Buscamos la propiedad
     const propiedad = filas.find(f => f[0].replace(/"/g, '').trim() === idBusqueda.trim());
     if (!propiedad) return new Response("Propiedad no encontrada", { status: 404 });
-
+	  
     // 2. Definimos la función para sacar datos UNA SOLA VEZ
     const getDato = (nombre) => {
       const i = encabezados.indexOf(nombre.toUpperCase());
@@ -454,7 +490,7 @@ grid-template-columns: 1fr 1fr;
 <body>
     <header class="header">
         <div class="contenedor-header">
-            <h1 class="logo"><a href="/index.html"><img src="/imagenes/logo-real-state-fx-2.png" alt="Logo">RealState</a></h1>
+            <h1 class="logo"><a href="/index.html"><img src="/imagenes/logo-real-state-fx-2.png" alt="Logo">${c.nombre}</a></h1>
 			<nav class="menu">
                 <button class="menu-toggle">×</button>
                 <ul>
