@@ -228,12 +228,12 @@ function generarPlantilla(tarjetas, total, c) {
                 <h2 style="margin-bottom:20px;">Servicios profesionales</h2>
                 <p style="max-width:800px; margin: 0 auto 40px;">${c.descripcion}</p>
                 <div class="grid-servicios">
-                    ${c.s1_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s1_t}</h3><p>${c.s1_x}</p></article>` : ''}
-                    ${c.s2_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s2_t}</h3><p>${c.s2_x}</p></article>` : ''}
-                    ${c.s3_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s3_t}</h3><p>${c.s3_x}</p></article>` : ''}
-                    ${c.s4_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s4_t}</h3><p>${c.s4_x}</p></article>` : ''}
-                    ${c.s5_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s5_t}</h3><p>${c.s5_x}</p></article>` : ''}
-                    ${c.s6_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s6_t}</h3><p>${c.s6_x}</p></article>` : ''}
+                    ${c.s1_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s1_t}</h3><div class="scroll-fx scroll-delgado"><p>${c.s1_x}</p></div></article>` : ''}
+                    ${c.s2_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s2_t}</h3><div class="scroll-fx scroll-delgado"><p>${c.s2_x}</p></div></article>` : ''}
+                    ${c.s3_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s3_t}</h3><div class="scroll-fx scroll-delgado"><p>${c.s3_x}</p></div></article>` : ''}
+                    ${c.s4_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s4_t}</h3><div class="scroll-fx scroll-delgado"><p>${c.s4_x}</p></div></article>` : ''}
+                    ${c.s5_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s5_t}</h3><div class="scroll-fx scroll-delgado"><p>${c.s5_x}</p></div></article>` : ''}
+                    ${c.s6_t ? `<article><i class="houzez-icon icon-check-circle-1"></i><h3>${c.s6_t}</h3><div class="scroll-fx scroll-delgado"><p>${c.s6_x}</p></div></article>` : ''}
                 </div>              
             </div>
         </section>
@@ -347,6 +347,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
