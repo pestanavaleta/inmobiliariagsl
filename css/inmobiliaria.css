@@ -722,7 +722,7 @@ button, input, textarea, option, form, select, radio, check {
 
 
 .scroll-fx-2 {
-	max-height: 320px; /* ajusta la altura */	
+	max-height: 150px; /* ajusta la altura */	
 }
 .scroll-delgado {
     
@@ -979,6 +979,7 @@ button, input, textarea, option, form, select, radio, check {
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
