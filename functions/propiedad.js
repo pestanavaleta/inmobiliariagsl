@@ -737,9 +737,9 @@ grid-template-columns: 1fr 1fr;
             <article class="contacto">
                 <h2>Contácto</h2>
                 <ul> 
-                    <li><i class="houzez-icon icon-mobile-phone"></i> <span><span>+ 57</span> 3232844851</span></li>
-                    <li><i class="houzez-icon icon-pin me-2"></i> Calle 80 #65 15. Bogotá - Colombia</li> 
-                    <li><i class="houzez-icon icon-envelope"></i> <span>email@artefox.com</span></li> 
+               		${config.telefono ? `<li><i class="houzez-icon icon-mobile-phone"></i> <a href="tel:${config.telefono}">${config.telefono}</a></li>` : ''}
+    				${config.email ? `<li><i class="houzez-icon icon-envelope"></i> <a href="mailto:${config.email}">${config.email}</a></li>` : ''}
+    				${config.direccion ? `<li><i class="houzez-icon icon-pin"></i> ${config.direccion}</li>` : ''}
                 </ul>
             </article>
 
