@@ -103,7 +103,7 @@ export async function onRequest(context) {
             htmlTarjetas += `
                 <article class="item-propiedad" onclick="window.location.href='./propiedad?id=${p.id}'" data-tipo="${p.tipo}" data-operacion="${p.operacion}" data-precio="${p.precio}" data-ubicacion="${p.dir} ${p.zona}">
                     <div class="contenedor-img">
-					     <span style="position:absolute, top:5px, left:5px; background:red; padding:5px">${p.estado}</span>
+					     <span class="etiqueta-estado">${p.estado}</span>
                         <img src="${p.foto}" onerror="this.src='https://via.placeholder.com/400x300?text=Sin Foto';">
                     </div>
                     <h2>${p.titulo || (p.operacion + ' en ' + p.zona)}</h2>
@@ -152,6 +152,20 @@ function generarPlantilla(tarjetas, total, c) {
          .relleno-5 { padding: 10px 20px 55px 20px; }
         .houzez-icon.icon-Filter-Faders{ font-size: 30px; 
         }
+		.etiqueta-estado{
+	    position: absolute;
+    background: #dd003e;
+    padding: 3px 14px;
+    top: 15px;
+    right: 15px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+		}
     </style>
 </head>
 <body>
@@ -398,6 +412,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
