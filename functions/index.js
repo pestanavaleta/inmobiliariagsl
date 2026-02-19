@@ -351,49 +351,56 @@ function generarPlantilla(tarjetas, total, c) {
             const btnLimpiar = document.querySelector('.boton-limpiar');
             const selectorOrden = document.querySelector('.selector-orden');
             let tarjetasArr = Array.from(listado.getElementsByTagName('article'));
+			let cantidadCargarMas = 3; // Cuántas mostrar al inicio
+			const btnCargarMas = document.getElementById('btnCargarMas');
 
             function normalizar(texto) {
                 return texto ? texto.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase() : "";
             }
-
+			
             function filtrar() {
-                const query = normalizar(formulario.ubicacion.value);
-                const op = formulario.operacion.value;
-                const tipo = formulario.tipo.value;
-                const min = parseInt(formulario.querySelector('input[name="min-precio"]').value) || 0;
-                const max = parseInt(formulario.querySelector('input[name="max-precio"]').value) || Infinity;
-                
-                let c = 0;
-                tarjetasArr.forEach(t => {
-                    const text = normalizar(t.dataset.ubicacion);
-                    const precio = parseInt(t.dataset.precio) || 0;
-                    const matchText = query.length < 3 || text.includes(query);
-                    const matchOp = op === "" || t.dataset.operacion === op;
-                    const matchTipo = tipo === "" || t.dataset.tipo === tipo;
-                    const matchPrecio = precio >= min && precio <= max;
+    			const query = normalizar(formulario.ubicacion.value);
+    			const op = formulario.operacion.value;
+    			const tipo = formulario.tipo.value;
+    			const min = parseInt(formulario.querySelector('input[name="min-precio"]').value) || 0;
+    			const max = parseInt(formulario.querySelector('input[name="max-precio"]').value) || Infinity;
+    
+    			// Detectamos si hay algún filtro activo
+    			const hayFiltroActivo = query.length >= 3 || op !== "" || tipo !== "" || min > 0 || max < Infinity;
 
-                    if(matchText && matchOp && matchTipo && matchPrecio) {
-                        t.style.display = "grid";
-                        c++;
-                    } else {
-                        t.style.display = "none";
-                    }
-                });
-                document.getElementById('total-propiedades').innerText = c;
-                actualizarEtiquetas(op, tipo, min, max);
-            }
+    			let c = 0;
+    			tarjetasArr.forEach((t, index) => {
+        			const text = normalizar(t.dataset.ubicacion);
+        			const precio = parseInt(t.dataset.precio) || 0;
+        			const matchText = query.length < 3 || text.includes(query);
+        			const matchOp = op === "" || t.dataset.operacion === op;
+        			const matchTipo = tipo === "" || t.dataset.tipo === tipo;
+        			const matchPrecio = precio >= min && precio <= max;
 
-            function actualizarEtiquetas(op, tipo, min, max) {
-                contenedorEtiquetas.innerHTML = '';
-                let activo = false;
-                if(op) { crearEtiqueta(op, 'operacion'); activo = true; }
-                if(tipo) { crearEtiqueta(tipo, 'tipo'); activo = true; }
-                if(min > 0 || max < Infinity) { 
-                    crearEtiqueta('Precio: ' + min.toLocaleString() + '...', 'precio'); 
-                    activo = true; 
-                }
-                contenedorFiltros.style.display = activo ? 'flex' : 'none';
-            }
+        			if(matchText && matchOp && matchTipo && matchPrecio) {
+            			// SI NO HAY FILTRO: Respetamos el límite del "Cargar más"
+            			// SI HAY FILTRO: Mostramos todo lo que coincida
+            			if (!hayFiltroActivo && index >= cantidadCargarMas) {
+                			t.style.display = "none";
+            			} else {
+                			t.style.display = "grid";
+                			c++;
+           				}
+        			} else {
+			            t.style.display = "none";
+        				}
+    				});
+
+    				// Manejo del botón "Ver más"
+    				if (hayFiltroActivo || cantidadCargarMas >= tarjetasArr.length) {
+        				btnCargarMas.style.display = 'none';
+    				} else {
+        			btnCargarMas.style.display = 'inline-block';
+   					 }
+
+    				document.getElementById('total-propiedades').innerText = c;
+    				actualizarEtiquetas(op, tipo, min, max);
+				}
 
             function crearEtiqueta(texto, campo) {
                 const div = document.createElement('div');
@@ -425,6 +432,17 @@ function generarPlantilla(tarjetas, total, c) {
             formulario.addEventListener('input', filtrar);
             btnLimpiar.onclick = () => { formulario.reset(); filtrar(); };
             document.getElementById('abrir-filtros').onclick = () => formulario.classList.toggle('activo');
+			// --- AQUÍ ES DONDE DEBES PEGARLO ---
+            if (btnCargarMas) {
+                btnCargarMas.onclick = () => {
+                    cantidadCargarMas += 3; 
+                    filtrar(); 
+                };
+            }
+
+            // Llamada inicial para que al abrir la web solo se vean 3
+            filtrar();
+            // --- FIN DEL PEGADO ---
         });
     </script>
 	
@@ -484,6 +502,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
