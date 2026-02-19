@@ -138,14 +138,13 @@ function generarPlantilla(tarjetas, total, c) {
     <link rel="stylesheet" type="text/css" href="css/icons.css">
     <script src="script.js"></script>
     <style>
-        :root { --color-maestro: ${c.color};
-		       --rgb-maestro: ${rgbMaestro};}
-        body{ background: #f8f9fa; }
+        :root { --color-maestro: ${c.color};}
+        body{ background: #f8f9fa;}
+		
         .banner-inicio .contenedor { 
-       .banner-inicio .contenedor { 
-        background: linear-gradient(180deg, rgba(${rgbMaestro}, 0.67) 0%, rgba(0, 0, 0, 0.84) 100%), 
-                    url(https://santo-grial-inmobiliaria-free.pages.dev/imagenes/bg-2.jpg) !important;
-    }
+            background: linear-gradient(180deg, ${c.color}AB 0%, rgba(0, 0, 0, 0.84) 100%), 
+                url(https://santo-grial-inmobiliaria-free.pages.dev/imagenes/bg-2.jpg) !important;
+		 }
          .relleno-5 { padding: 10px 20px 55px 20px; }
         .houzez-icon.icon-Filter-Faders{ font-size: 30px; 
         }
@@ -395,6 +394,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
