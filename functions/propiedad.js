@@ -805,7 +805,7 @@ grid-template-columns: 1fr 1fr;
 	}
 	function shareLinkedIn() {
     	var url = window.location.href;
-    	window.open('www.linkedin.com/shareArticle?mini=true&?url=' + encodeURIComponent(url), '_blank');
+    	window.open('https://www.linkedin.com/shareArticle?mini=true&?url=' + encodeURIComponent(url), '_blank');
 	}
 	function shareWhatsApp() {
     	var url = window.location.href;
