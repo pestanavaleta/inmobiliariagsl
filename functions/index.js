@@ -152,6 +152,36 @@ function generarPlantilla(tarjetas, total, c) {
          .relleno-5 { padding: 10px 20px 55px 20px; }
         .houzez-icon.icon-Filter-Faders{ font-size: 30px; 
         }
+		
+		/* Ocultamos todas por defecto */
+		.item-propiedad {
+    		display: none;
+			}
+
+		/* Solo mostramos las que tengan la clase .visible */
+		.item-propiedad.visible {
+    		display: grid !important; /* Usamos grid para respetar tu subgrid */
+		}
+
+		.contenedor-boton-mas {
+    		text-align: center;
+    		margin: 40px 0;
+		}
+
+		#btnCargarMas {
+    		padding: 12px 30px;
+    		background-color: var(--color-maestro);
+    		color: white;
+    		border: none;
+    		border-radius: 5px;
+    		cursor: pointer;
+    		font-weight: bold;
+    		transition: transform 0.2s;
+		}
+
+		#btnCargarMas:hover {
+    		transform: scale(1.05);
+		}
 	
     </style>
 </head>
@@ -236,6 +266,7 @@ function generarPlantilla(tarjetas, total, c) {
                     </div>
                 </div>
                 <div class="grid-propiedades" id="listado-propiedades">${tarjetas}</div>
+				<div class="contenedor-boton-mas"><button id="btnCargarMas" class="btn-primario">Ver más propiedades</button></div>
             </div>
         </section>
 
@@ -396,9 +427,64 @@ function generarPlantilla(tarjetas, total, c) {
             document.getElementById('abrir-filtros').onclick = () => formulario.classList.toggle('activo');
         });
     </script>
+	
+	<sript>
+	document.addEventListener("DOMContentLoaded", () => {
+    const btnCargarMas = document.getElementById('btnCargarMas');
+    const tarjetas = Array.from(document.querySelectorAll('.item-propiedad'));
+    const buscador = document.querySelector('.filtro-buscador'); // Ajusta segun tu clase de buscador
+    let cantidadActual = 3;
+
+    function actualizarVisibilidad() {
+        // Si el buscador está vacío, mostramos solo por bloques (3 en 3)
+        const estaBuscando = buscador && buscador.value.trim() !== "";
+        
+        if (estaBuscando) {
+            // Si busca, escondemos el botón y dejamos que el filtro decida
+            btnCargarMas.style.display = 'none';
+        } else {
+            // Si NO busca, aplicamos la lógica de "Cargar más"
+            tarjetas.forEach((t, index) => {
+                if (index < cantidadActual) {
+                    t.classList.add('visible');
+                } else {
+                    t.classList.remove('visible');
+                }
+            });
+
+            // Mostrar u ocultar botón según si quedan más
+            btnCargarMas.style.display = cantidadActual >= tarjetas.length ? 'none' : 'inline-block';
+        }
+    }
+
+    // Evento Click del botón
+    btnCargarMas.addEventListener('click', () => {
+        cantidadActual += 3;
+        actualizarVisibilidad();
+    });
+
+    // Escuchar el buscador para esconder el botón si escriben algo
+    if (buscador) {
+        buscador.addEventListener('input', () => {
+            if (buscador.value.trim() !== "") {
+                btnCargarMas.style.display = 'none';
+                // Aquí forzamos a que todas tengan .visible para que tu filtro 
+                // de "display: none" actual funcione sobre todas
+                tarjetas.forEach(t => t.classList.add('visible'));
+            } else {
+                actualizarVisibilidad();
+            }
+        });
+    }
+
+    // Ejecución inicial
+    actualizarVisibilidad();
+});
+	</script>
 </body>
 </html>`;
 }
+
 
 
 
