@@ -398,6 +398,22 @@ j	ustify-content: start;
 }
 .propiedades .grid-propiedades article .contenedor-img {
     grid-row: 1;
+	position:relative;
+}
+
+.etiqueta-estado{
+	position: absolute;
+    background: #dd003e;
+    padding: 3px 14px;
+    top: 15px;
+    right: 15px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .propiedades .grid-propiedades article:hover{
@@ -1375,6 +1391,7 @@ grid-template-columns: 1fr 1fr;
 /*====FIN REDES SOCILES DE COMPARTIR====*/
 
 /*========FIN DETALLE DE PROPIEDAD=======*/
+
 
 
 
