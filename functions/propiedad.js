@@ -803,6 +803,10 @@ grid-template-columns: 1fr 1fr;
     	var url = window.location.href;
     	window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url), '_blank');
 	}
+	function shareLinkedIn() {
+    	var url = window.location.href;
+    	window.open('www.linkedin.com/shareArticle?mini=true&?url=' + encodeURIComponent(url), '_blank');
+	}
 	function shareWhatsApp() {
     	var url = window.location.href;
     	window.open('https://wa.me/?text=' + encodeURIComponent(url), '_blank');
