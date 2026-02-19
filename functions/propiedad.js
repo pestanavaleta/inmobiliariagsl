@@ -98,7 +98,10 @@ export async function onRequest(context) {
     <meta property="og:description" content="${descMeta}">
     <meta property="og:image" content="${imagenMeta}">
     <meta property="og:type" content="website">
-
+    <meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="${tituloMeta}">
+	<meta name="twitter:description" content="${descMeta}">
+	<meta name="twitter:image" content="${imagenMeta}">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"></noscript>
     
