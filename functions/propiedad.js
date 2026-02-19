@@ -473,7 +473,7 @@ grid-template-columns: 1fr 1fr;
 /*====REDES SOCILES DE COMPARTIR====*/
     .redes-compartir {
     display: flex;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     }
 
