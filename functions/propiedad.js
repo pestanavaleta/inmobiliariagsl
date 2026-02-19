@@ -795,22 +795,29 @@ grid-template-columns: 1fr 1fr;
 
 
 <script>
-	function shareFacebook() {
-    	var url = window.location.href;
-    	window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
-	}
- 	function shareTwitter() {
-    	var url = window.location.href;
-    	window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url), '_blank');
-	}
-	function shareLinkedIn() {
-    	var url = window.location.href;
-    	window.open('https://www.linkedin.com/shareArticle?mini=true&?url=' + encodeURIComponent(url), '_blank');
-	}
-	function shareWhatsApp() {
-    	var url = window.location.href;
-    	window.open('https://wa.me/?text=' + encodeURIComponent(url), '_blank');
-	}
+
+/*==== BOTONES PARA COMPARTIR EN REDES ====*/
+function shareFacebook() {
+  var url = encodeURIComponent(window.location.href);
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+}
+
+function shareLinkedIn() {
+  var url = encodeURIComponent(window.location.href);
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank');
+}
+
+function shareTwitter() {
+  var url = encodeURIComponent(window.location.href);
+  window.open('https://twitter.com/intent/tweet?url=' + url, '_blank');
+}
+
+function shareWhatsApp() {
+  var url = encodeURIComponent(window.location.href);
+  window.open('https://wa.me/?text=' + url, '_blank');
+}
+/*==== FIN BOTONES PARA COMPARTIR EN REDES ====*/
+
 </script>
 
 
