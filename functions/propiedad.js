@@ -785,11 +785,11 @@ grid-template-columns: 1fr 1fr;
 		function shareWhatsApp() {
     		var url = window.location.href;
     		window.open('https://wa.me/?text=' + encodeURIComponent(url), '_blank');
-	}
-	function shareLinkedIn() {
-    	var url = window.location.href;
-    	window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url), '_blank');
-	}
+		}
+		function shareLinkedIn() {
+    		var url = window.location.href;
+    		window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url), '_blank');
+		}
 </script>
 
 
