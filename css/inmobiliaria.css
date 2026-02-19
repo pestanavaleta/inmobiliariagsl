@@ -433,6 +433,7 @@ j	ustify-content: start;
 	margin-top: 10px;
     margin-bottom: 0px;
     word-break: break-word;
+	grid-row: 2;
 }
 
 
@@ -993,6 +994,7 @@ j	ustify-content: start;
 }
 
   /*====ESTILOS FILTRO ACTIVOS====*/
+
 
 
 
