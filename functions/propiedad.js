@@ -698,7 +698,6 @@ grid-template-columns: 1fr 1fr;
      						<div class="redes-compartir">
         						<button class="share-btn facebook" onclick="shareFacebook()"><i class="houzez-icon icon-social-media-facebook"></i></button>
         						<button class="share-btn twitter"   onclick="shareTwitter()"><i class="houzez-icon icon-x-logo-twitter-logo-2"></i></button>
-         						<button class="share-btn linkedin" onclick="shareLinkedIn()"><i class="houzez-icon icon-professional-network-linkedin"></i></button>
          						<button class="share-btn whatsapp" onclick="shareWhatsApp()"><i class="houzez-icon icon-messaging-whatsapp"></i></button>   
     						</div>
 						</div>
@@ -801,12 +800,6 @@ function shareFacebook() {
   var url = encodeURIComponent(window.location.href);
   window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
 }
-
-function shareLinkedIn() {
-  var url = encodeURIComponent(window.location.href);
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank');
-}
-
 function shareTwitter() {
   var url = encodeURIComponent(window.location.href);
   window.open('https://twitter.com/intent/tweet?url=' + url, '_blank');
