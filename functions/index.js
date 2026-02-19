@@ -142,7 +142,7 @@ function generarPlantilla(tarjetas, total, c) {
         body{ background: #f8f9fa;}
 		
         .banner-inicio .contenedor { 
-            background: linear-gradient(180deg, ${c.color}AB 0%, rgba(0, 0, 0, 0.84) 100%), 
+            background-image: linear-gradient(180deg, ${c.color}AB 0%, rgba(0, 0, 0, 0.84) 100%), 
                 url(https://santo-grial-inmobiliaria-free.pages.dev/imagenes/bg-2.jpg) !important;
 		 }
          .relleno-5 { padding: 10px 20px 55px 20px; }
@@ -394,6 +394,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
