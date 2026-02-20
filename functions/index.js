@@ -78,11 +78,9 @@ export async function onRequest(context) {
 
         const limpiar = (val) => val ? val.replace(/^"|"$/g, '').trim() : "";
 
-    for (let i = filas.length - 1; i >= 1; i--) {
-    const dato = filas[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-    if (dato.length < 5) continue; 
-    const titulo = dato[1].replace(/^"|"$/g, '');
-    const descripcion = dato[4].replace(/^"|"$/g, '');
+      for (let i = filas.length - 1; i >= 1; i--) {
+            const dato = filas[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+		   if (dato.length < 5) continue;
 
             const p = {
                 id: limpiar(dato[idx.id]),
@@ -433,6 +431,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
