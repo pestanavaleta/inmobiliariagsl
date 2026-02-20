@@ -78,9 +78,10 @@ export async function onRequest(context) {
 
         const limpiar = (val) => val ? val.replace(/^"|"$/g, '').trim() : "";
 
-      for (let i = filas.length - 1; i >= 1; i--) {
+   let htmlTarjetas = "";
+        for (let i = 1; i < filas.length; i++) {
             const dato = filas[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-		   if (dato.length < 5) continue;
+            if (dato.length < 5) continue;
 
             const p = {
                 id: limpiar(dato[idx.id]),
@@ -90,13 +91,12 @@ export async function onRequest(context) {
                 moneda: limpiar(dato[idx.moneda]) || "$",
                 habs: limpiar(dato[idx.habs]) || "0",
                 banos: limpiar(dato[idx.banos]) || "0",
-                parking: limpiar(dato[idx.parking]) || "0",
+                parking: limpiar(dato[idx.estacionamiento]) || "0",
                 area: limpiar(dato[idx.area]) || "0",
                 zona: limpiar(dato[idx.zona]),
                 dir: limpiar(dato[idx.dir]),
                 foto: limpiar(dato[idx.foto]),
-                titulo: limpiar(dato[idx.titulo]),
-				estado: limpiar(dato[idx.estado])
+                titulo: limpiar(dato[idx.titulo])
             };
 
             htmlTarjetas += `
@@ -431,6 +431,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
