@@ -136,7 +136,8 @@ function generarPlantilla(tarjetas, total, c) {
 	<link rel="icon" type="image/png" href="imagenes/logo-icono.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${c.nombre} | Listado de propiedades</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"> </noscript>
     <link rel="stylesheet" type="text/css" href="css/inmobiliaria.css">
     <link rel="stylesheet" type="text/css" href="css/icons.css">
     <script src="script.js"></script>
@@ -431,6 +432,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
