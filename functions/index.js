@@ -91,7 +91,7 @@ export async function onRequest(context) {
                 moneda: limpiar(dato[idx.moneda]) || "$",
                 habs: limpiar(dato[idx.habs]) || "0",
                 banos: limpiar(dato[idx.banos]) || "0",
-                parking: limpiar(dato[idx.estacionamiento]) || "0",
+                parking: limpiar(dato[idx.parking]) || "0",
                 area: limpiar(dato[idx.area]) || "0",
                 zona: limpiar(dato[idx.zona]),
                 dir: limpiar(dato[idx.dir]),
@@ -431,6 +431,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
