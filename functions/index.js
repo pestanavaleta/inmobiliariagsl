@@ -290,7 +290,7 @@ function generarPlantilla(tarjetas, total, c) {
         <div class="contenedor">
             <article class="info">
                 ${c.logo ? `<img src="${c.logo}" class="logo-footer">` : `<h2>${c.nombre}</h2>`}
-                <p><a href="https://www.youtube.com/artefox" taget="_blank">Creado por ArteFox</a> © 2026 ${c.nombre}</p>          
+                <p><a href="https://www.youtube.com/artefox" taget="_blank" style="color:var(--color-maestro)">Creado por ArteFox</a> © 2026 ${c.nombre}</p>          
 				    <ul class="redes">
                   		${c.fb ? `<li><a href="${c.fb}" target="_blank"><i class="houzez-icon icon-social-media-facebook"></i></a></li>` : ''}
     					${c.ig ? `<li><a href="${c.ig}" target="_blank"><i class="houzez-icon icon-social-instagram"></i></a></li>` : ''}
@@ -432,6 +432,7 @@ function generarPlantilla(tarjetas, total, c) {
 </body>
 </html>`;
 }
+
 
 
 
