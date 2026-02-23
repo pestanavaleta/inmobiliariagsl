@@ -345,7 +345,7 @@ export async function onRequest(context) {
     				${config.x ? `<li><a href="${config.x}" target="_blank"><i class="houzez-icon icon-x-logo-twitter-logo-2"></i></a></li>` : ''}
     				${config.li ? `<li><a href="${config.li}" target="_blank"><i class="houzez-icon icon-professional-network-linkedin"></i></a></li>` : ''}
 				</ul>
-                <p class="copy">© ${anioActual} ${config.nombre}</p>
+                <p class="copy"><a href="https://www.youtube.com/artefox" taget="_blank" style="color:var(--color-maestro)">Creado por ArteFox.</a> © ${anioActual} ${config.nombre}</p>
             </article>
             
 
